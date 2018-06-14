@@ -476,7 +476,7 @@ NOTE: If you have not downloaded the student files see this section in the befor
 
     ![In the Edit template blade, Load file is selected.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image58.png "Edit template blade")
 
-7.  Update the following parameters to reference the **WGNet2** virtual network in the **WGBNetRG2** resource group.
+7.  Update the following parameters to reference the **WGVNet2** virtual network in the **WGBNetRG2** resource group.
 
     ![A screenshot that shows the Existing Virtual Network Name and Existing Virtual Network Resource group parameters.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image59.png "Template parameters")
 
