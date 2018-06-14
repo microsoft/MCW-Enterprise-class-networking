@@ -668,7 +668,7 @@ In this exercise, management of the Azure-based systems will only be available f
 
     [Under Storage in the Settings blade, No is selected.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image85.png "Settings blade")
 
-5.  Under **Network**, click on the **Virtual network** section. On the **Choose Virtual Network** blade, click on **WGVNet**.
+5.  Under **Network**, click on the **Virtual network** section. On the **Choose Virtual Network** blade, click on **WGVNet1**.
 
     [In the Settings blade, under Network, Virtual network (new) WGMGMTRG-vnet is selected. In the Choose virtual network blade, WGVNet is selected.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image86.png "Settings blade, Choose virtual network blade")
 
