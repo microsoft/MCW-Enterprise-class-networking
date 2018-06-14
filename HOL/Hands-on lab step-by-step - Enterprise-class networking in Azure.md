@@ -166,7 +166,7 @@ Duration: 15 minutes
 
 2.  In the **Subnets** blade click on **+Subnet**.
 
-![In the Subnets blade, the add Subnet button is selected.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image29.png "Subnets blade")
+    ![In the Subnets blade, the add Subnet button is selected.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image29.png "Subnets blade")
 
 3.  On the **Add subnet** blade, enter the following information:
 
