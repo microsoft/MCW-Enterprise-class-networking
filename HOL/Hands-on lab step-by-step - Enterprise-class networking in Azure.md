@@ -522,7 +522,7 @@ NOTE: If you have not downloaded the student files see this section in the befor
 
 9.  Change to **Off** for Administrators, and click **OK**.
 
-    ![In the Internet Explorer Enhanced Security Configuration dialog box, the Administrators Off radio button is selected, and the OK button is selected as well.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image18.png "Internet Explorer Enhanced Security Configuration")
+    ![In the Internet Explorer Enhanced Security Configuration dialog box, the Administrators Off radio button is selected, and the OK button is selected as well.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image15.png "Internet Explorer Enhanced Security Configuration")
 
 10. You will now ensure the CloudShop application is up and running. Open Internet explorer, and browse to both the WGWEB1 and WGWEB2 servers.
 
