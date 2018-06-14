@@ -152,7 +152,7 @@ Duration: 15 minutes
 
         Upon completion, it should look like the following screenshot. Validate the information is correct, and click **Create**.
 
-        ![](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image26.jpeg)
+       ![](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image26.jpeg)
 
 3.  Monitor the deployment status by clicking on the **Notifications** button in the portal. In a minute or so, you should see a confirmation of the successful deployment. Click the **Go to Resource** button.
 
