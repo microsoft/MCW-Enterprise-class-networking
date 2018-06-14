@@ -350,7 +350,7 @@ Route Tables are containers for User Defined Routes (UDRs). The route table is c
 
 5.  Using the breadcrumb menu at the top of the portal, click on **Route tables** to go back to that blade.
 
-![Route tables is selected on the Azure Portal top menu.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image44.png "Azure Portal menu")
+    ![Route tables is selected on the Azure Portal top menu.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image44.png "Azure Portal menu")
 
 6.  Click on **WebRT** followed by **Routes**.
 
