@@ -254,7 +254,7 @@ Route Tables are containers for User Defined Routes (UDRs). The route table is c
 
 1.  On the main portal menu to the left, click **More services** located at the bottom of the menu. Type **route** into the search box, and click on **Route tables**.
 
-    [In the left pane of the Azure portal, More services is selected. Route is typed in the search box, and Route tables is selected.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image34.png "Azure Portal")
+    ![In the left pane of the Azure portal, More services is selected. Route is typed in the search box, and Route tables is selected.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image34.png "Azure Portal")
 
 2.  On the **Route tables** blade, click **Add**.
 
