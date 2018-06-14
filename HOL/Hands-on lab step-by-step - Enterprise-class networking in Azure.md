@@ -150,7 +150,7 @@ Duration: 15 minutes
 
     g.  Subnet address range: **10.7.0.0/29**
 
-        Upon completion, it should look like the following screenshot. Validate the information is correct, and click **Create**.
+       Upon completion, it should look like the following screenshot. Validate the information is correct, and click **Create**.
 
        ![](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image26.jpeg)
 
