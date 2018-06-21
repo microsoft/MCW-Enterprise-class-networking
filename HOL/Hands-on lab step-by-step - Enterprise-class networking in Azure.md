@@ -786,19 +786,19 @@ In this exercise, you will provision and configure a Barracuda firewall applianc
 
     ![Under Auto-shutdown, Enable auto-shutdown is set to Off.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image99.png "Auto-shutdown section")
 
-14. All remaining settings on the **Settings** blade are correct. Click **OK** to accept these settings.
+14. All remaining settings on the **Settings** blade are correct. Select **OK** to accept these settings.
 
-15. On the **Summary** blade, ensure the validation passes, and click **Create**.
+15. On the **Summary** blade, ensure the validation passes, and choose **Create**.
 
 ### Task 2: Enable IP forwarding on the firewall network interface
 
 Within 1-2 minutes, the resource group **barracudafwrg** will be created and the appliance will be in the creation process. Next, we will edit settings on the network interface associated with the firewall.
 
-1.  On the main Azure menu click on **Resource groups**.
+1.  On the main Azure menu select **Resource groups**.
 
     ![In the Azure Portal, Resource groups is selected.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image100.png "Azure Portal")
 
-2.  Click on the **barracudafwrg** resource group. This resource group contains the objects associated with the firewall appliance. Click on the network interface.
+2.  Select the **barracudafwrg** resource group. This resource group contains the objects associated with the firewall appliance. Choose the network interface.
 
     ![Click on the barracudafwrg resource group. This resource group contains the objects associated with the firewall appliance. Click on the network interface.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image101.jpeg "Resource group view")
 
