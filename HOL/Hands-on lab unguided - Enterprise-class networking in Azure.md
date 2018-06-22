@@ -34,36 +34,36 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Solution Architecture](#solution-architecture)
     - [Requirements](#requirements)
     - [Help References](#help-references)
-    - [Exercise 1: Create a Virtual Network and provision subnets](#exercise-1-create-a-virtual-network-and-provision-subnets)
+    - [Exercise 1: Create a Virtual Network and provision subnets](#exercise-1--create-a-virtual-network-and-provision-subnets)
         - [Tasks to complete](#tasks-to-complete)
         - [Exit criteria](#exit-criteria)
-    - [Exercise 2: Create second Virtual Network and provision subnets](#exercise-2-create-second-virtual-network-and-provision-subnets)
-        - [Tasks to complete](#tasks-to-complete-1)
-        - [Exit criteria](#exit-criteria-1)
-    - [Exercise 3: Create route tables with required routes](#exercise-3-create-route-tables-with-required-routes)
-        - [Tasks to complete](#tasks-to-complete-2)
-        - [Exit criteria](#exit-criteria-2)
-    - [Exercise 4: Create n-tier application and validate functionality](#exercise-4-create-n-tier-application-and-validate-functionality)
-        - [Tasks to complete](#tasks-to-complete-3)
-        - [Exit criteria](#exit-criteria-3)
-    - [Exercise 5: Build the management station](#exercise-5-build-the-management-station)
-        - [Tasks to complete](#tasks-to-complete-4)
-        - [Exit criteria](#exit-criteria-4)
-    - [Exercise 6: Virtual Network Peering](#exercise-6-virtual-network-peering)
+    - [Exercise 2: Create second Virtual Network and provision subnets](#exercise-2--create-second-virtual-network-and-provision-subnets)
+        - [Tasks to complete](#tasks-to-complete)
+        - [Exit criteria](#exit-criteria)
+    - [Exercise 3: Create route tables with required routes](#exercise-3--create-route-tables-with-required-routes)
+        - [Tasks to complete](#tasks-to-complete)
+        - [Exit criteria](#exit-criteria)
+    - [Exercise 4: Create n-tier application and validate functionality](#exercise-4--create-n-tier-application-and-validate-functionality)
+        - [Tasks to complete](#tasks-to-complete)
+        - [Exit criteria](#exit-criteria)
+    - [Exercise 5: Build the management station](#exercise-5--build-the-management-station)
+        - [Tasks to complete](#tasks-to-complete)
+        - [Exit criteria](#exit-criteria)
+    - [Exercise 6: Virtual Network Peering](#exercise-6--virtual-network-peering)
         - [Task to Complete](#task-to-complete)
-        - [Exit criteria](#exit-criteria-5)
-    - [Exercise 7: Provision and configure partner firewall solution](#exercise-7-provision-and-configure-partner-firewall-solution)
-        - [Tasks to complete](#tasks-to-complete-5)
-        - [Exit criteria](#exit-criteria-6)
-    - [Exercise 8: Configure the firewall to control traffic flow](#exercise-8-configure-the-firewall-to-control-traffic-flow)
-        - [Tasks to complete](#tasks-to-complete-6)
-        - [Exit criteria](#exit-criteria-7)
-    - [Exercise 9: Configure Site-to-Site connectivity](#exercise-9-configure-site-to-site-connectivity)
-        - [Tasks to complete](#tasks-to-complete-7)
-        - [Exit criteria](#exit-criteria-8)
-    - [Exercise 10: Validate connectivity from 'on-premises' to Azure](#exercise-10-validate-connectivity-from-on-premises-to-azure)
-        - [Tasks to complete](#tasks-to-complete-8)
-        - [Exit criteria](#exit-criteria-9)
+        - [Exit criteria](#exit-criteria)
+    - [Exercise 7: Provision and configure partner firewall solution](#exercise-7--provision-and-configure-partner-firewall-solution)
+        - [Tasks to complete](#tasks-to-complete)
+        - [Exit criteria](#exit-criteria)
+    - [Exercise 8: Configure the firewall to control traffic flow](#exercise-8--configure-the-firewall-to-control-traffic-flow)
+        - [Tasks to complete](#tasks-to-complete)
+        - [Exit criteria](#exit-criteria)
+    - [Exercise 9: Configure Site-to-Site connectivity](#exercise-9--configure-site-to-site-connectivity)
+        - [Tasks to complete](#tasks-to-complete)
+        - [Exit criteria](#exit-criteria)
+    - [Exercise 10: Validate connectivity from 'on-premises' to Azure](#exercise-10--validate-connectivity-from-on-premises-to-azure)
+        - [Tasks to complete](#tasks-to-complete)
+        - [Exit criteria](#exit-criteria)
     - [After the hands-on lab](#after-the-hands-on-lab)
 
 <!-- /TOC -->
@@ -94,7 +94,7 @@ You have been asked by Woodgrove Financial Services to provision a proof of conc
 
 -   How to capitalize on load balancers to distribute load and ensure service availability
 
--   How to implement a partner firewall solution to control traffic flow based on policies.
+-   How to implement a partner firewall solution to control traffic flow based on policies
 
 The result of this proof of concept will be an environment resembling this diagram:
 
@@ -176,9 +176,9 @@ In this exercise, you will create User Defined Routes (UDRs), for the Subnets of
 
 ### Exit criteria
 
--   A route table configured for each subnet (except for the perimeter subnet).
+-   A route table configured for each subnet (except for the perimeter subnet)
 
--   Each route table will have routes to the other subnets and to the Internet, all with a 'next hop' configured as the NVA.
+-   Each route table will have routes to the other subnets and to the Internet, all with a 'next hop' configured as the NVA
 
 ## Exercise 4: Create n-tier application and validate functionality
 
@@ -196,15 +196,15 @@ In this exercise, you will deploy a web application using an ARM template. Once 
 
     ![The Cloud shop webpage displays, with a message displaying, saying that Products are running on WGWEB1. Below that, a drop-down list of products display.](images/Hands-onlabunguided-Enterprise-classnetworkinginAzureimages/media/image24.png "Cloud shop webpage")
 
--   Create an Internal load balancer in the WebTier Subnet of the VNet and assign it a static IP Address of 10.7.1.10.
+-   Create an Internal load balancer in the WebTier Subnet of the VNet and assign it a static IP Address of 10.7.1.10
 
--   RDP to WGWEB1 and browse to <http://10.7.1.10> validate the CloudShop app has been configured behind the internal load balancer and connecting to both web servers.
+-   RDP to WGWEB1 and browse to <http://10.7.1.10> validate the CloudShop app has been configured behind the internal load balancer and connecting to both web servers
 
--   After the website is validated, remove the Public IP address from WGWEB1.
+-   After the website is validated, remove the Public IP address from WGWEB1
 
 ### Exit criteria
 
--   Two IIS-based web servers deployed in the Web tier subnet.
+-   Two IIS-based web servers deployed in the Web tier subnet
 
 -   One SQL server deployed in the Data tier subnet
 
@@ -216,7 +216,7 @@ In this exercise, you will deploy a web application using an ARM template. Once 
 
     -   A load balancing rule directing traffic to both web servers
 
--   A functional CloudShop web application, accessible from both web servers and from the load-balancer internal IP (this will be validated later when access is made available through the firewall).
+-   A functional CloudShop web application, accessible from both web servers and from the load-balancer internal IP (this will be validated later when access is made available through the firewall)
 
 ## Exercise 5: Build the management station
 
@@ -230,7 +230,7 @@ In this exercise, you will build a 'jump-box', which will be used to manage the 
 
 ### Exit criteria
 
--   A server is provisioned in the management subnet to function as a management station.
+-   A server is provisioned in the management subnet to function as a management station
 
 ## Exercise 6: Virtual Network Peering
 
@@ -242,7 +242,7 @@ Configure a Virtual Network peering from both Virtual Network bidirectional.
 
 ### Exit criteria
 
--   VNet peering must be configured from each VNet to each other.
+-   VNet peering must be configured from each VNet to each other
 
 ## Exercise 7: Provision and configure partner firewall solution
 
@@ -260,7 +260,7 @@ In this exercise, you will provision and configure an Enterprise grade firewall 
 
 ### Exit criteria
 
--   A partner firewall appliance is provisioned into a perimeter subnet with a single network interface (IP forwarding enabled).
+-   A partner firewall appliance is provisioned into a perimeter subnet with a single network interface (IP forwarding enabled)
 
 ## Exercise 8: Configure the firewall to control traffic flow
 
@@ -274,7 +274,7 @@ In this exercise, you will 'wire up' the configuration to allow access to the Cl
 
     -   Only one IP address is exposed to the Internet. All other servers in the environment should **not** have Public IP addresses when this exercise is complete.
 
-    -   All Azure VMs access the Internet through the firewall only.
+    -   All Azure VMs access the Internet through the firewall only
 
     -   Served from the internal load-balancer IP (NATted through the firewall), CloudShop website is accessible from the Internet.
 
@@ -282,17 +282,17 @@ In this exercise, you will 'wire up' the configuration to allow access to the Cl
 
 -   Associate the previously created route tables to their corresponding subnets. This will bypass system routes and should force all traffic to flow from each subnet to the firewall as the next hop.
 
--   Remove any Public IP addresses from all servers with the exception of the firewall appliance.
+-   Remove any Public IP addresses from all servers with the exception of the firewall appliance
 
 ### Exit criteria
 
--   The CloudShop web application is accessible via HTTP using the Public IP address of the firewall only.
+-   The CloudShop web application is accessible via HTTP using the Public IP address of the firewall only
 
--   Several refreshes of the CloudShop web application should eventually display both web server names at the top of the site validating the load balancer is functioning.
+-   Several refreshes of the CloudShop web application should eventually display both web server names at the top of the site validating the load balancer is functioning
 
     ![The same Cloud shop webpage displays, with WGWEB! circled in the same top message.](images/Hands-onlabunguided-Enterprise-classnetworkinginAzureimages/media/image25.png "Cloud Shop webpage")
 
--   RDP access from the Internet is functional to the management server **only** through the firewall.
+-   RDP access from the Internet is functional to the management server **only** through the firewall
 
 The outcome of the above exercises demonstrates leveraging a firewall in an Azure Virtual Network to manage all inter-subnet and Internet traffic. Also, a web application was made available on the Internet via the firewall.
 
@@ -306,7 +306,7 @@ In this task, we will set up another Virtual Network in a separate Azure region.
 
 -   Create a new Azure Virtual Network in a separate Azure region. This VNet only needs a single subnet.
 
--   Create a Site-to-Site connection between the two Virtual Networks.
+-   Create a Site-to-Site connection between the two Virtual Networks
 
 ### Exit criteria
 
@@ -322,19 +322,19 @@ In this exercise, you will configure an Azure route table with appropriate route
 
 ### Tasks to complete
 
--   Create a route table with appropriate route rules to direct VNet to VNet traffic to the firewall appliance configured earlier.
+-   Create a route table with appropriate route rules to direct VNet to VNet traffic to the firewall appliance configured earlier
 
--   Create firewall rules to permit the traffic from the new Virtual Network to the Web subnet where CloudShop is deployed.
+-   Create firewall rules to permit the traffic from the new Virtual Network to the Web subnet where CloudShop is deployed
 
--   Create a virtual machine in this new Virtual Network. It should have a Public IP address enabling direct RDP connectivity to it.
+-   Create a virtual machine in this new Virtual Network. It should have a Public IP address enabling direct RDP connectivity to it
 
 ### Exit criteria
 
--   One route table with appropriate routes associated with the subnet created in Exercise 7.
+-   One route table with appropriate routes associated with the subnet created in Exercise 7
 
--   One firewall rule allowing traffic from the 'on-premises' network to flow to the Web subnet where the CloudShop application is deployed.
+-   One firewall rule allowing traffic from the 'on-premises' network to flow to the Web subnet where the CloudShop application is deployed
 
-From the VM in your 'on-premises' VNet, validate you can browse to the **internal** load balancer IP address, through the firewall, and see the CloudShop application.
+From the VM in your 'on-premises' VNet, validate you can browse to the **internal** load balancer IP address, through the firewall, and see the CloudShop application
 
 ## After the hands-on lab
 
