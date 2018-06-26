@@ -26,7 +26,7 @@ If you are working on a machine that cannot run PowerShell, carry out this task.
 
     ![Resource Manager is selected from the Select a deployment model drop-down list box.](images/Setup/image4.png "Select a deployment model ")
 
-5.  Set the following configuration on the Basics tab, and choose **OK**
+5.  Set the following configuration on the Basics tab, and choose **OK**:
 
     -   Name: **LABVM**
 
