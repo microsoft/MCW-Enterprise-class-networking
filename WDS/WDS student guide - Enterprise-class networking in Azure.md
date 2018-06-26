@@ -66,7 +66,9 @@ Attendees will be better able to plan and design Virtual Networks in Azure with 
 **Outcome** 
 
 Analyze your customer’s needs.
-Time frame: 15 minutes 
+
+Timeframe: 15 minutes 
+
 Directions: With all participants in the session, the facilitator or SME presents an overview of the customer case study along with technical tips. 
 1.  Meet your table participants and trainer 
 2.  Read all of the directions for steps 1–3 in the student guide 
@@ -148,7 +150,7 @@ Woodgrove's pilot deployment of cloud-native application include:
  
 Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
 
-Time frame: 60 minutes
+Timeframe: 60 minutes
 
 **Business needs**
 
@@ -166,13 +168,13 @@ The desired outcome is a network architecture that meets the needs of a modern f
 
 -   Which peering options and other ExpressRoute features would be required?
 
--   Diagram at a high-level the workflow that Woodgrove will follow to enable ExpressRoute in its environment.
+-   Diagram at a high-level the workflow that Woodgrove will follow to enable ExpressRoute in its environment
 
--   Identify the information you would need to collect to configure peering and the NAT requirements for the solution.
+-   Identify the information you would need to collect to configure peering and the NAT requirements for the solution
 
 -   How will you address providing connectivity in the event of a major connectivity provider outage?
 
--   Be sure your design considers the international needs of the organization.
+-   Be sure your design considers the international needs of the organization
 
 ### Virtual network design in Azure
 
@@ -213,7 +215,7 @@ Prepare a 15-minute chalk-talk style presentation to the customer.
  
 Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
-Time frame: 30 minutes
+Timeframe: 30 minutes
 
 **Presentation** 
 
