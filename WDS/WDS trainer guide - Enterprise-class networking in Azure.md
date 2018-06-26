@@ -196,7 +196,9 @@ Attendees will be better able to plan and design Virtual Networks in Azure with 
 **Outcome** 
 
 Analyze your customer’s needs.
-Time frame: 15 minutes 
+
+Timeframe: 15 minutes 
+
 Directions: With all participants in the session, the facilitator or SME presents an overview of the customer case study along with technical tips. 
 1.  Meet your table participants and trainer 
 2.  Read all of the directions for steps 1–3 in the student guide 
@@ -265,7 +267,7 @@ Woodgrove's pilot deployment of cloud-native application include:
 
 4.  The corporate compliance officer of Woodgrove must ensure compliance with many requirements to ensure his organization passes audits from both internal and external entities. One requirement is all outbound Internet requests must pass through an on-premises system that inspects and logs this traffic. The CCO is skeptical of IaaS solutions in Azure since "those VMs in the cloud can access the Internet directly."
 
-1.  Woodgrove has an arduous process for testing vendor-supplied solutions. In the network space, they have standardized on 3rd party solutions for network and application firewalls with existing vendors. They would like to use their trusted vendors to support cloud-based configurations as much as possible.
+5.  Woodgrove has an arduous process for testing vendor-supplied solutions. In the network space, they have standardized on 3rd party solutions for network and application firewalls with existing vendors. They would like to use their trusted vendors to support cloud-based configurations as much as possible.
 
 
 ### Infographic for common scenarios
@@ -278,7 +280,7 @@ Woodgrove's pilot deployment of cloud-native application include:
  
 Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
 
-Time frame: 60 minutes
+Timeframe: 60 minutes
 
 **Business needs**
 
@@ -343,7 +345,7 @@ Prepare a 15-minute chalk-talk style presentation to the customer.
  
 Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
-Time frame: 30 minutes
+Timeframe: 30 minutes
 
 **Presentation** 
 
@@ -386,7 +388,7 @@ Directions: Tables reconvene with the larger group to hear a facilitator or SME 
 
 ## Step 1: Review the customer case study
 
--   Check in with your table participants to introduce yourself as the trainer.
+-   Check in with your table participants to introduce yourself as the trainer
 
 -   Ask, "What questions do you have about the customer case study?"
 
@@ -737,7 +739,7 @@ Only RDP traffic from the headquarters-based NOC will be allowed into the manage
 
   **Potential Answer**---The Azure Marketplace has thousands of solutions from many different vendors. These solutions are built and validated by the vendor to perform as well as their on-premises variety. In the case of Woodgrove, which takes advantage of solutions from Barracuda, there are several solutions from this vendor in place and ready for use today.
 
-1.  Network engineers cannot do packet capture within the Azure network.
+5.  Network engineers cannot do packet capture within the Azure network.
 
   **Potential Answer**---Network Watcher in combination with NSG flow logs will allow Network Engineers to perform a full analysis of traffic between NSGs and from compute resources hosted in Azure.
 
