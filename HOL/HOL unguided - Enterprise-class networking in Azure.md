@@ -31,9 +31,9 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 - [Enterprise-class networking in Azure hands-on lab unguided](#enterprise-class-networking-in-azure-hands-on-lab-unguided)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
     - [Overview](#overview)
-    - [Solution Architecture](#solution-architecture)
+    - [Solution architecture](#solution-architecture)
     - [Requirements](#requirements)
-    - [Help References](#help-references)
+    - [Help references](#help-references)
     - [Exercise 1: Create a Virtual Network and provision subnets](#exercise-1--create-a-virtual-network-and-provision-subnets)
         - [Tasks to complete](#tasks-to-complete)
         - [Exit criteria](#exit-criteria)
@@ -98,7 +98,7 @@ You have been asked by Woodgrove Financial Services to provision a proof of conc
 
 The result of this proof of concept will be an environment resembling this diagram:
 
-## Solution Architecture
+## Solution architecture
 
 ![This image represents an entire overview of an environment for the result of this proof of concept.](images/Hands-onlabunguided-Enterprise-classnetworkinginAzureimages/media/image2.png "Solution architecture")
 
@@ -106,7 +106,7 @@ The result of this proof of concept will be an environment resembling this diagr
 
 You must have a working Azure subscription to carry out this hands-on lab unguided without a spending cap to deploy the pfSense firewall from the Azure Marketplace.
 
-## Help References
+## Help references
 
 |    |            |
 |----------|:-------------:|
