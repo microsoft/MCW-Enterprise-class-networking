@@ -247,15 +247,15 @@ Woodgrove's pilot deployment of cloud-native application include:
 
 2.  A detailed architecture and plan for providing an enterprise-class networking scenario supporting secure data flow between tiers in an n-tier application. All components of the design must be highly available.
 
-1.  The result of needs one and two should be a network design that allows their applications to run both on-premises and in Azure.
+3.  The result of needs one and two should be a network design that allows their applications to run both on-premises and in Azure.
 
-1.  All Internet traffic must be passed through an on-premises intrusion detection or prevention system to comply with company policy.
+4.  All Internet traffic must be passed through an on-premises intrusion detection or prevention system to comply with company policy.
 
-1.  All the incoming traffic must be inspected in order to make sure it blocks sql injections, cross-site scripting and other web attacks such as http protocol violation etc.
+5.  All the incoming traffic must be inspected in order to make sure it blocks sql injections, cross-site scripting and other web attacks such as http protocol violation etc.
 
 6.  All the traffic that will hit the cloud-based marketing web app will not be passed through on premises network. An alternative cloud-native security solution is required.
 
-1.  URL based routing, redirection, SSL termination will need to be on the FW/LB level for the new cloud web apps.
+7.  URL based routing, redirection, SSL termination will need to be on the FW/LB level for the new cloud web apps.
 
 ### Customer objections 
 
