@@ -117,15 +117,15 @@ Woodgrove's pilot deployment of cloud-native application include:
 
 2.  A detailed architecture and plan for providing an enterprise-class networking scenario supporting secure data flow between tiers in an n-tier application. All components of the design must be highly available.
 
-1.  The result of needs one and two should be a network design that allows their applications to run both on-premises and in Azure.
+3.  The result of needs one and two should be a network design that allows their applications to run both on-premises and in Azure.
 
-1.  All Internet traffic must be passed through an on-premises intrusion detection or prevention system to comply with company policy.
+4.  All Internet traffic must be passed through an on-premises intrusion detection or prevention system to comply with company policy.
 
-1.  All the incoming traffic must be inspected in order to make sure it blocks sql injections, cross-site scripting and other web attacks such as http protocol violation etc.
+5.  All the incoming traffic must be inspected in order to make sure it blocks sql injections, cross-site scripting and other web attacks such as http protocol violation etc.
 
 6.  All the traffic that will hit the cloud-based marketing web app will not be passed through on premises network. An alternative cloud-native security solution is required.
 
-1.  URL based routing, redirection, SSL termination will need to be on the FW/LB level for the new cloud web apps.
+7.  URL based routing, redirection, SSL termination will need to be on the FW/LB level for the new cloud web apps.
 
 ### Customer objections 
 
@@ -137,7 +137,7 @@ Woodgrove's pilot deployment of cloud-native application include:
 
 4.  The corporate compliance officer of Woodgrove must ensure compliance with many requirements to ensure his organization passes audits from both internal and external entities. One requirement is all outbound Internet requests must pass through an on-premises system that inspects and logs this traffic. The CCO is skeptical of IaaS solutions in Azure since "those VMs in the cloud can access the Internet directly."
 
-1.  Woodgrove has an arduous process for testing vendor-supplied solutions. In the network space, they have standardized on 3rd party solutions for network and application firewalls with existing vendors. They would like to use their trusted vendors to support cloud-based configurations as much as possible.
+5.  Woodgrove has an arduous process for testing vendor-supplied solutions. In the network space, they have standardized on 3rd party solutions for network and application firewalls with existing vendors. They would like to use their trusted vendors to support cloud-based configurations as much as possible.
 
 
 ### Infographic for common scenarios
