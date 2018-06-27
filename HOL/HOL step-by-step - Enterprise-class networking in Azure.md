@@ -110,7 +110,7 @@ The result of this proof of concept will be an environment resembling this diagr
 
 You must have a working Azure subscription to carry out this hands-on lab step-by-step without a spending cap to deploy the Barracuda firewall from the Azure Marketplace.
 
-## Help References
+## Help references
 
 |    |            |
 |----------|:-------------:|
