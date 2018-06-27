@@ -154,7 +154,7 @@ Upon completion, it should look like the following screenshot. Validate the info
 
  ![](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image26.jpeg)
 
-1.  Monitor the deployment status by selecting **Notifications** in the portal. In a minute or so, you should see a confirmation of the successful deployment. Select **Go to Resource**.
+3.  Monitor the deployment status by selecting **Notifications** in the portal. In a minute or so, you should see a confirmation of the successful deployment. Select **Go to Resource**.
 
     ![This is a successful notification of a deployment.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image27.jpeg "Deployment succeeded")
 
