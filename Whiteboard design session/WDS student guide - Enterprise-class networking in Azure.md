@@ -1,4 +1,5 @@
-![](images/HeaderPic.png "Microsoft Cloud Workshops")
+
+![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Enterprise-class networking in Azure
@@ -28,16 +29,16 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 - [Enterprise-class networking in Azure whiteboard design session student guide](#enterprise-class-networking-in-azure-whiteboard-design-session-student-guide)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
+    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
         - [Customer background](#customer-background)
         - [Customer situation](#customer-situation)
         - [Customer needs](#customer-needs)
         - [Customer objections](#customer-objections)
         - [Infographic for common scenarios](#infographic-for-common-scenarios)
-    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
+    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
         - [ExpressRoute integration](#expressroute-integration)
         - [Virtual network design in Azure](#virtual-network-design-in-azure)
-    - [Step 3: Present the solution](#step-3--present-the-solution)
+    - [Step 3: Present the solution](#step-3-present-the-solution)
     - [Wrap-up](#wrap-up)
     - [Additional references](#additional-references)
 
@@ -47,32 +48,22 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 ## Abstract and learning objectives 
 
-Students will learn how to setup and configure a Virtual Network with Subnets in Azure. Students will also learn how to secure the Virtual Network with Firewall rules and route tables. Additionally, students will set up access to the Virtual Network with a \"jump box\" and a Site-to-Site VPN connection.
+In this workshop, you will look at the process of configuring am enterprise class network within Azure. Your design will include technologies to connect multiple virtual networks, as well as using capabilities such as routing to deploy network virtual appliances such as firewalls to secure your deployment. 
 
-Attendees will be better able to plan and design Virtual Networks in Azure with multiple subnets to filter and control network traffic. In addition,
+At the end of this whiteboard design session, you will be better able to design solutions using Azure Networking features and capabilities.
 
--   Create a Virtual Network and provision subnets
-
--   Create route tables with required routes
-
--   Build a management \"jump box\"
-
--   Configure firewall to control traffic flow
-
--   Configure site-to-site connectivity
 
 ## Step 1: Review the customer case study 
 
 **Outcome** 
 
 Analyze your customer’s needs.
-
-Timeframe: 15 minutes 
-
-Directions: With all participants in the session, the facilitator or SME presents an overview of the customer case study along with technical tips. 
+Time frame: 15 minutes 
+Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
 1.  Meet your table participants and trainer 
 2.  Read all of the directions for steps 1–3 in the student guide 
 3.  As a table team, review the following customer case study
+
 
 
 ###  Customer background
@@ -142,15 +133,15 @@ Woodgrove's pilot deployment of cloud-native application include:
 
 ### Infographic for common scenarios
 
-![](images/Whiteboarddesignsessionstudentguide-Enterprise-classnetworkinginAzureimages/media/image3.jpeg)
+![Infographic that depicts several Azure infrastructure technologies including virtual machines, virtual networks, site-to-site VPN, and ExpressRoute ](images/Whiteboarddesignsessionstudentguide-Enterprise-classnetworkinginAzureimages/media/image3.jpeg "Infographic for common scenarios")
+
 
 ## Step 2: Design a proof of concept solution
 
-**Outcome**
- 
+**Outcome** 
 Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
 
-Timeframe: 60 minutes
+Time frame: 60 minutes
 
 **Business needs**
 
@@ -215,7 +206,7 @@ Prepare a 15-minute chalk-talk style presentation to the customer.
  
 Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
-Timeframe: 30 minutes
+Time frame: 30 minutes
 
 **Presentation** 
 
@@ -229,9 +220,10 @@ Directions:
 7.  Tables switch roles and repeat Steps 2–6
 
 
+
 ##  Wrap-up 
 
-Timeframe: 15 minutes
+Time frame: 15 minutes
 
 Directions: Tables reconvene with the larger group to hear the facilitator or SME share the preferred solution for the case study.
 

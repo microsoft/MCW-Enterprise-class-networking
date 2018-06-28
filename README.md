@@ -1,10 +1,16 @@
-# Abstract
+# Enterprise class networking
 
-## Workshop
+Woodgrove Financial Services has been in business for over 75 years and is a well-known and respected name brand in the financial industry. They are historically risk-averse, and it has served them well, enabling them to weather several financial storms that closed the doors on similarly sized institutions. While Woodgrove started in the United States, around 20 years ago, they branched out into the international arena by acquiring a bank headquartered in Mexico City. Today, they have 224 branches in the United States and 64 in Mexico.
 
-Students will learn how to setup and configure a Virtual Network with Subnets in Azure. Students will also learn how to secure the Virtual Network with Firewall rules and route tables. Additionally, students will set up access to the Virtual Network with a \"jump box\" and a Site-to-Site VPN connection.
+Woodgrove is committed to migrating to Microsoft Azure with the goal of modernizing their infrastructure and wants to start with designing an enterprise class network. 
 
-Attendees will be better able to plan and design Virtual Networks in Azure with multiple subnets to filter and control network traffic. In addition,
+## Abstract
+
+### Workshop
+
+In this workshop, you will learn how to setup and configure a virtual Network with subnets in Azure. You will also learn how to secure the virtual network with by deploying a network virtual appliance and configure firewall rules and route tables. Additionally, you will set up access to the virtual network with a jump box and a site-to-site VPN connection.
+
+You will be better able to plan and design virtual networks in Azure with multiple subnets to filter and control network traffic. In addition,
 
 -   Create a Virtual Network and provision subnets
 
@@ -16,34 +22,24 @@ Attendees will be better able to plan and design Virtual Networks in Azure with 
 
 -   Configure Site-to-Site connectivity
 
-## Whiteboard Design Session
-TBD
+### Whiteboard Design Session
+In this workshop, you will look at the process of configuring am enterprise class network within Azure. Your design will include technologies to connect multiple virtual networks, as well as using capabilities such as routing to deploy network virtual appliances such as firewalls to secure your deployment. 
 
-## Hand-on Lab
-TBD
+At the end of this whiteboard design session, you will be better able to design solutions using Azure Networking features and capabilities.
+
+### Hand-on Lab
+In this hands-on lab, you will setup and configure a virtual network with subnets in Azure. You will also learn how to secure the virtual network by deploying a network virtual appliances and configure route tables on the subnets in your virtual network. Additionally, you will set up access to the virtual network with a jump box and a site-to-site VPN connection.
+
+At the end of this hands-on lab, you will be better able to configure Azure networking components. 
 
 
-## Azure services and related products
+### Azure services and related products
 - Azure Virtual Machines
 - Azure PowerShell
 - Azure Virtual Networks 
 - Azure Load Balancing
-- Firewall Appliances in Azure
+- Network Virtual Appliances in Azure
 - Azure Site to Site connectivity
 - Azure Site to on-premises connectivity
 
-
-# Contributing
-
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.microsoft.com.
-
-When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 

@@ -1,4 +1,4 @@
-![](images/HeaderPic.png "Microsoft Cloud Workshops")
+![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Enterprise-class networking in Azure
@@ -20,7 +20,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-2018 Microsoft Corporation. All rights reserved.
+© 2018 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -34,36 +34,36 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Solution architecture](#solution-architecture)
     - [Requirements](#requirements)
     - [Help references](#help-references)
-    - [Exercise 1: Create a Virtual Network and provision subnets](#exercise-1--create-a-virtual-network-and-provision-subnets)
+    - [Exercise 1: Create a Virtual Network and provision subnets](#exercise-1-create-a-virtual-network-and-provision-subnets)
         - [Tasks to complete](#tasks-to-complete)
         - [Exit criteria](#exit-criteria)
-    - [Exercise 2: Create second Virtual Network and provision subnets](#exercise-2--create-second-virtual-network-and-provision-subnets)
-        - [Tasks to complete](#tasks-to-complete)
-        - [Exit criteria](#exit-criteria)
-    - [Exercise 3: Create route tables with required routes](#exercise-3--create-route-tables-with-required-routes)
-        - [Tasks to complete](#tasks-to-complete)
-        - [Exit criteria](#exit-criteria)
-    - [Exercise 4: Create n-tier application and validate functionality](#exercise-4--create-n-tier-application-and-validate-functionality)
-        - [Tasks to complete](#tasks-to-complete)
-        - [Exit criteria](#exit-criteria)
-    - [Exercise 5: Build the management station](#exercise-5--build-the-management-station)
-        - [Tasks to complete](#tasks-to-complete)
-        - [Exit criteria](#exit-criteria)
-    - [Exercise 6: Virtual Network Peering](#exercise-6--virtual-network-peering)
+    - [Exercise 2: Create second Virtual Network and provision subnets](#exercise-2-create-second-virtual-network-and-provision-subnets)
+        - [Tasks to complete](#tasks-to-complete-1)
+        - [Exit criteria](#exit-criteria-1)
+    - [Exercise 3: Create route tables with required routes](#exercise-3-create-route-tables-with-required-routes)
+        - [Tasks to complete](#tasks-to-complete-2)
+        - [Exit criteria](#exit-criteria-2)
+    - [Exercise 4: Create n-tier application and validate functionality](#exercise-4-create-n-tier-application-and-validate-functionality)
+        - [Tasks to complete](#tasks-to-complete-3)
+        - [Exit criteria](#exit-criteria-3)
+    - [Exercise 5: Build the management station](#exercise-5-build-the-management-station)
+        - [Tasks to complete](#tasks-to-complete-4)
+        - [Exit criteria](#exit-criteria-4)
+    - [Exercise 6: Virtual Network Peering](#exercise-6-virtual-network-peering)
         - [Task to Complete](#task-to-complete)
-        - [Exit criteria](#exit-criteria)
-    - [Exercise 7: Provision and configure partner firewall solution](#exercise-7--provision-and-configure-partner-firewall-solution)
-        - [Tasks to complete](#tasks-to-complete)
-        - [Exit criteria](#exit-criteria)
-    - [Exercise 8: Configure the firewall to control traffic flow](#exercise-8--configure-the-firewall-to-control-traffic-flow)
-        - [Tasks to complete](#tasks-to-complete)
-        - [Exit criteria](#exit-criteria)
-    - [Exercise 9: Configure Site-to-Site connectivity](#exercise-9--configure-site-to-site-connectivity)
-        - [Tasks to complete](#tasks-to-complete)
-        - [Exit criteria](#exit-criteria)
-    - [Exercise 10: Validate connectivity from 'on-premises' to Azure](#exercise-10--validate-connectivity-from-on-premises-to-azure)
-        - [Tasks to complete](#tasks-to-complete)
-        - [Exit criteria](#exit-criteria)
+        - [Exit criteria](#exit-criteria-5)
+    - [Exercise 7: Provision and configure partner firewall solution](#exercise-7-provision-and-configure-partner-firewall-solution)
+        - [Tasks to complete](#tasks-to-complete-5)
+        - [Exit criteria](#exit-criteria-6)
+    - [Exercise 8: Configure the firewall to control traffic flow](#exercise-8-configure-the-firewall-to-control-traffic-flow)
+        - [Tasks to complete](#tasks-to-complete-6)
+        - [Exit criteria](#exit-criteria-7)
+    - [Exercise 9: Configure Site-to-Site connectivity](#exercise-9-configure-site-to-site-connectivity)
+        - [Tasks to complete](#tasks-to-complete-7)
+        - [Exit criteria](#exit-criteria-8)
+    - [Exercise 10: Validate connectivity from 'on-premises' to Azure](#exercise-10-validate-connectivity-from-on-premises-to-azure)
+        - [Tasks to complete](#tasks-to-complete-8)
+        - [Exit criteria](#exit-criteria-9)
     - [After the hands-on lab](#after-the-hands-on-lab)
 
 <!-- /TOC -->
@@ -72,19 +72,9 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 ## Abstract and learning objectives
 
-Students will learn how to setup and configure a Virtual Network with Subnets in Azure. Students will also learn how to secure the Virtual Network with Firewall rules and route tables. Additionally, students will set up access to the Virtual Network with a \"jump box\" and a Site-to-Site VPN connection.
+In this hands-on lab, you will setup and configure a virtual network with subnets in Azure. You will also learn how to secure the virtual network by deploying a network virtual appliances and configure route tables on the subnets in your virtual network. Additionally, you will set up access to the virtual network with a jump box and a site-to-site VPN connection.
 
-Attendees will be better able to plan and design Virtual Networks in Azure with multiple subnets to filter and control network traffic. In addition,
-
--   Create a Virtual Network and provision subnets
-
--   Create route tables with required routes
-
--   Build a management jump box
-
--   Configure firewall to control traffic flow
-
--   Configure Site-to-Site connectivity
+At the end of this hands-on lab, you will be better able to configure Azure networking components. 
 
 ## Overview
 

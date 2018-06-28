@@ -1,4 +1,5 @@
-![](images/HeaderPic.png "Microsoft Cloud Workshops")
+
+![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Enterprise-class networking in Azure
@@ -27,43 +28,43 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 <!-- TOC -->
 
 - [Trainer information](#trainer-information)
-  - [Role of the trainer](#role-of-the-trainer)
-  - [Whiteboard design session flow](#whiteboard-design-session-flow)
-  - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session--how-to-prepare)
-  - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session--tips-for-an-effective-whiteboard-design-session)
+    - [Role of the trainer](#role-of-the-trainer)
+    - [Whiteboard design session flow](#whiteboard-design-session-flow)
+    - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
+    - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
 - [Enterprise-class networking in Azure whiteboard design session student guide](#enterprise-class-networking-in-azure-whiteboard-design-session-student-guide)
-  - [Abstract and learning objectives](#abstract-and-learning-objectives)
-  - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
-    - [Customer background](#customer-background)
-    - [Customer situation](#customer-situation)
-    - [Customer needs](#customer-needs)
-    - [Customer objections](#customer-objections)
-    - [Infographic for common scenarios](#infographic-for-common-scenarios)
-  - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
-    - [ExpressRoute integration](#expressroute-integration)
-    - [Virtual network design in Azure](#virtual-network-design-in-azure)
-  - [Step 3: Present the solution](#step-3--present-the-solution)
-  - [Wrap-up](#wrap-up)
-  - [Additional references](#additional-references)
+    - [Abstract and learning objectives](#abstract-and-learning-objectives)
+    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
+        - [Customer background](#customer-background)
+        - [Customer situation](#customer-situation)
+        - [Customer needs](#customer-needs)
+        - [Customer objections](#customer-objections)
+        - [Infographic for common scenarios](#infographic-for-common-scenarios)
+    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
+        - [ExpressRoute integration](#expressroute-integration)
+        - [Virtual network design in Azure](#virtual-network-design-in-azure)
+    - [Step 3: Present the solution](#step-3-present-the-solution)
+    - [Wrap-up](#wrap-up)
+    - [Additional references](#additional-references)
 - [Enterprise-class networking in Azure whiteboard design session trainer guide](#enterprise-class-networking-in-azure-whiteboard-design-session-trainer-guide)
-  - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
-  - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
-  - [Step 3: Present the solution](#step-3--present-the-solution)
-  - [Wrap-up](#wrap-up)
-  - [Preferred target audience](#preferred-target-audience)
-  - [Preferred solution](#preferred-solution)
-    - [Solutions for Cloud web app deployment](#solutions-for-cloud-web-app-deployment)
-    - [ExpressRoute configuration details](#expressroute-configuration-details)
-    - [ExpressRoute prerequisites](#expressroute-prerequisites)
-    - [ExpressRoute connectivity type for Chicago](#expressroute-connectivity-type-for-chicago)
-    - [ExpressRoute connectivity type for Plano](#expressroute-connectivity-type-for-plano)
-    - [ExpressRoute integration NAT requirements](#expressroute-integration-nat-requirements)
-    - [ExpressRoute availability](#expressroute-availability)
-    - [Next-generation firewall HA configuration](#next-generation-firewall-ha-configuration)
-    - [Managing traffic routing](#managing-traffic-routing)
-    - [Network Security Group usage](#network-security-group-usage)
-  - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
-  - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
+    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
+    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
+    - [Step 3: Present the solution](#step-3-present-the-solution-1)
+    - [Wrap-up](#wrap-up-1)
+    - [Preferred target audience](#preferred-target-audience)
+    - [Preferred solution](#preferred-solution)
+        - [Solutions for Cloud web app deployment](#solutions-for-cloud-web-app-deployment)
+        - [ExpressRoute configuration details](#expressroute-configuration-details)
+        - [ExpressRoute prerequisites](#expressroute-prerequisites)
+        - [ExpressRoute connectivity type for Chicago](#expressroute-connectivity-type-for-chicago)
+        - [ExpressRoute connectivity type for Plano](#expressroute-connectivity-type-for-plano)
+        - [ExpressRoute integration NAT requirements](#expressroute-integration-nat-requirements)
+        - [ExpressRoute availability](#expressroute-availability)
+        - [Next-generation firewall HA configuration](#next-generation-firewall-ha-configuration)
+        - [Managing traffic routing](#managing-traffic-routing)
+        - [Network Security Group usage](#network-security-group-usage)
+    - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
+    - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
 
 <!-- /TOC -->
 
@@ -177,29 +178,17 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 ## Abstract and learning objectives 
 
-Students will learn how to setup and configure a Virtual Network with Subnets in Azure. Students will also learn how to secure the Virtual Network with Firewall rules and route tables. Additionally, students will set up access to the Virtual Network with a \"jump box\" and a Site-to-Site VPN connection.
+In this workshop, you will look at the process of configuring am enterprise class network within Azure. Your design will include technologies to connect multiple virtual networks, as well as using capabilities such as routing to deploy network virtual appliances such as firewalls to secure your deployment. 
 
-Attendees will be better able to plan and design Virtual Networks in Azure with multiple subnets to filter and control network traffic. In addition,
-
--   Create a Virtual Network and provision subnets
-
--   Create route tables with required routes
-
--   Build a management \"jump box\"
-
--   Configure firewall to control traffic flow
-
--   Configure Site-to-Site connectivity
+At the end of this whiteboard design session, you will be better able to design solutions using Azure Networking features and capabilities.
 
 ## Step 1: Review the customer case study 
 
 **Outcome** 
 
 Analyze your customer’s needs.
-
-Timeframe: 15 minutes 
-
-Directions: With all participants in the session, the facilitator or SME presents an overview of the customer case study along with technical tips. 
+Time frame: 15 minutes 
+Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
 1.  Meet your table participants and trainer 
 2.  Read all of the directions for steps 1–3 in the student guide 
 3.  As a table team, review the following customer case study
@@ -272,15 +261,14 @@ Woodgrove's pilot deployment of cloud-native application include:
 
 ### Infographic for common scenarios
 
-![](images/Whiteboarddesignsessionstudentguide-Enterprise-classnetworkinginAzureimages/media/image3.jpeg)
+![Infographic that depicts several Azure infrastructure technologies including virtual machines, virtual networks, site-to-site VPN, and ExpressRoute ](images/Whiteboarddesignsessionstudentguide-Enterprise-classnetworkinginAzureimages/media/image3.jpeg "Infographic for common scenarios")
 
 ## Step 2: Design a proof of concept solution
 
-**Outcome**
- 
+**Outcome** 
 Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
 
-Timeframe: 60 minutes
+Time frame: 60 minutes
 
 **Business needs**
 
@@ -289,7 +277,6 @@ Directions: With all participants at your table, answer the following questions 
 2.  What customer business needs do you need to address with your solution?
 
 **Design** 
-
 Directions: With all participants at your table, respond to the following questions on a flip chart.
 
 The desired outcome is a network architecture that meets the needs of a modern financial services organization. This design will not have single points of failure and will include concepts such as a perimeter network with redundant firewalls protecting the internal subnets containing the application tiers. A simple network design will most likely confirm the director of Network Operation's beliefs that Azure cannot support real-world, enterprise-class networking (see customer objections)---*prove her wrong!*
@@ -345,7 +332,7 @@ Prepare a 15-minute chalk-talk style presentation to the customer.
  
 Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
-Timeframe: 30 minutes
+Time frame: 30 minutes
 
 **Presentation** 
 
@@ -355,13 +342,14 @@ Directions:
 3.  The Microsoft team presents their proposed solution to the customer
 4.  The customer makes one of the objections from the list of objections
 5.  The Microsoft team responds to the objection
-6.  The customer team gives feedback to the Microsoft team 
+6.  The customer team gives feedback to the Microsoft team
 7.  Tables switch roles and repeat Steps 2–6
+
 
 
 ##  Wrap-up 
 
-Timeframe: 15 minutes
+Time frame: 15 minutes
 
 Directions: Tables reconvene with the larger group to hear a facilitator or SME share the preferred solution for the case study.
 
@@ -723,25 +711,25 @@ Only RDP traffic from the headquarters-based NOC will be allowed into the manage
 
 ## Checklist of preferred objection handling
 
-1.  Woodgrove is reluctant to use Azure PaaS and SaaS offerings due to the public nature of these services. They are very reluctant for their data to traverse the Internet.
+1.  As a financial institution, Woodgrove is under tight regulatory compliance requirements. Security is a key aspect of compliance and as such, it must be a key tenant of all operations including those related to technology. The corporate security officer is generally opposed to using services solely accessible over the public Internet. Services like Office 365, CRM, and other Microsoft SaaS offerings are off limits. Additionally, PaaS services accessed over the Internet are also unusable. It has relegated Woodgrove to private Azure services such as IaaS.
 
-  **Potential Answer**---Using ExpressRoute, Woodgrove can access and use Azure private and public services without traversing the Internet. This secure connectivity, in addition to the business-class SLAs and greater bandwidth, make ExpressRoute a compelling offering that addresses this objection. Regarding SaaS offerings, such as Office 365, Woodgrove can employ Azure Active Directory conditional access to provide controls such as a multi-factor authenticated user, an authenticated device, and a compliant device. All traffic to and from Office 365 is encrypted with SSL/TLS, and the data is encrypted at rest in Microsoft datacenters.
+    **Potential Answer**---Using ExpressRoute, Woodgrove can access and use Azure private and public services without traversing the Internet. This secure connectivity, in addition to the business-class SLAs and greater bandwidth, make ExpressRoute a compelling offering that addresses this objection. Regarding SaaS offerings, such as Office 365, Woodgrove can employ Azure Active Directory conditional access to provide controls such as a multi-factor authenticated user, an authenticated device, and a compliant device. All traffic to and from Office 365 is encrypted with SSL/TLS, and the data is encrypted at rest in Microsoft datacenters.
 
-2.  Azure cannot support enterprise-class network scenarios.
+2.  The director of Network Operations is under the impression that complex enterprise-grade networking scenarios, such as those that support n-tier applications, cannot be configured in hyper-scale public clouds. Trust comes slowly with this director. She will most likely need detailed solution plans, case studies, and even customer testimonials to help convince her of the viability of anything other than simple networking scenarios in Azure.
 
-  **Potential Answer**---Azure supports many technologies that enable complex networking scenarios. For example, Azure offers both internal and external load balancers, network security groups that filter traffic in a similar fashion as firewall rules, user defined routing that allows for designing routing patterns, Virtual Network appliances from well-known vendors like Barracuda, Cisco, and Checkpoint, and Azure offers the ability to set up your Virtual Network with as many subnets as are required for your workload.
+    **Potential Answer**---Azure supports many technologies that enable complex networking scenarios. For example, Azure offers both internal and external load balancers, network security groups that filter traffic in a similar fashion as firewall rules, user defined routing that allows for designing routing patterns, Virtual Network appliances from well-known vendors like Barracuda, Cisco, and Checkpoint, and Azure offers the ability to set up your Virtual Network with as many subnets as are required for your workload.
 
-3.  We cannot monitor Internet traffic with systems based in Azure.
+3. The director of Network Operations also does not trust cloud security. She will need a strategy in place which allows Network Engineers the ability to analyze traffic flows and capture packets when needed for cloud-hosted resources.
 
-  **Potential Answer**---Azure fully supports forced tunneling ensuring that all Internet traffic is directed to the desired site, be that in an Azure Virtual Network or on-premises. For example, all Internet traffic can easily be routed from Azure to an on-premises appliance for intrusion detection/prevention and logging.
+    **Potential Answer**---Azure fully supports forced tunneling ensuring that all Internet traffic is directed to the desired site, be that in an Azure Virtual Network or on-premises. For example, all Internet traffic can easily be routed from Azure to an on-premises appliance for intrusion detection/prevention and logging.
 
-4.  Vetting Azure network components will take too long. We already have an approved list of vendors we trust and work with.
+4. The corporate compliance officer of Woodgrove must ensure compliance with many requirements to ensure his organization passes audits from both internal and external entities. One requirement is all outbound Internet requests must pass through an on-premises system that inspects and logs this traffic. The CCO is skeptical of IaaS solutions in Azure since "those VMs in the cloud can access the Internet directly."
 
-  **Potential Answer**---The Azure Marketplace has thousands of solutions from many different vendors. These solutions are built and validated by the vendor to perform as well as their on-premises variety. In the case of Woodgrove, which takes advantage of solutions from Barracuda, there are several solutions from this vendor in place and ready for use today.
+    **Potential Answer**---The Azure Marketplace has thousands of solutions from many different vendors. These solutions are built and validated by the vendor to perform as well as their on-premises variety. In the case of Woodgrove, which takes advantage of solutions from Barracuda, there are several solutions from this vendor in place and ready for use today.
 
-5.  Network engineers cannot do packet capture within the Azure network.
+5.  Woodgrove has an arduous process for testing vendor-supplied solutions. In the network space, they have standardized on 3rd party solutions for network and application firewalls with existing vendors. They would like to use their trusted vendors to support cloud-based configurations as much as possible.
 
-  **Potential Answer**---Network Watcher in combination with NSG flow logs will allow Network Engineers to perform a full analysis of traffic between NSGs and from compute resources hosted in Azure.
+    **Potential Answer**---Network Watcher in combination with NSG flow logs will allow Network Engineers to perform a full analysis of traffic between NSGs and from compute resources hosted in Azure.
 
 ## Customer quote (to be read back to the attendees at the end)
 

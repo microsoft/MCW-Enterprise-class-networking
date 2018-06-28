@@ -1,4 +1,4 @@
-![](images/HeaderPic.png "Microsoft Cloud Workshops")
+![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Enterprise-class networking in Azure
@@ -33,41 +33,41 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Solution architecture](#solution-architecture)
     - [Requirements](#requirements)
     - [Help references](#help-references)
-    - [Exercise 1: Create a Virtual Network and provision subnets](#exercise-1--create-a-virtual-network-and-provision-subnets)
-        - [Task 1: Create a Virtual Network](#task-1--create-a-virtual-network)
-        - [Task 2: Configure subnets](#task-2--configure-subnets)
-    - [Exercise 2: Create second Virtual Network and provision subnets](#exercise-2--create-second-virtual-network-and-provision-subnets)
-        - [Task 1: Create a second Virtual Network](#task-1--create-a-second-virtual-network)
-        - [Task 2: Configure Subnets](#task-2--configure-subnets)
-    - [Exercise 3: Create route tables with required routes](#exercise-3--create-route-tables-with-required-routes)
-        - [Task 1: Create route tables](#task-1--create-route-tables)
-        - [Task 2: Add routes to each route table](#task-2--add-routes-to-each-route-table)
-    - [Exercise 4: Deploy n-tier application and validate functionality](#exercise-4--deploy-n-tier-application-and-validate-functionality)
-        - [Task 1: Use the Azure portal for a template deployment](#task-1--use-the-azure-portal-for-a-template-deployment)
-        - [Task 2: Validate the CloudShop application is up after the deployment](#task-2--validate-the-cloudshop-application-is-up-after-the-deployment)
-        - [Task 3: Create a load balancer to distribute load between the web servers](#task-3--create-a-load-balancer-to-distribute-load-between-the-web-servers)
-        - [Task 4: Configure the load balancer](#task-4--configure-the-load-balancer)
-    - [Exercise 5: Build the management station](#exercise-5--build-the-management-station)
-        - [Task 1: Build the management VM](#task-1--build-the-management-vm)
-    - [Exercise 6: Virtual Network Peering](#exercise-6--virtual-network-peering)
-        - [Task 1: Configure VNet peering WGVNET1 to WGVNET2](#task-1--configure-vnet-peering-wgvnet1-to-wgvnet2)
-        - [Task 2: Configure VNet peering WGVNET2 to WGVNET1](#task-2--configure-vnet-peering-wgvnet2-to-wgvnet1)
-    - [Exercise 7: Provision and configure partner firewall solution](#exercise-7--provision-and-configure-partner-firewall-solution)
-        - [Task 1: Provision the firewall appliance](#task-1--provision-the-firewall-appliance)
-        - [Task 2: Enable IP forwarding on the firewall network interface](#task-2--enable-ip-forwarding-on-the-firewall-network-interface)
-    - [Exercise 8: Configure the firewall to control traffic flow](#exercise-8--configure-the-firewall-to-control-traffic-flow)
-        - [Task 1: Log on to Barracuda firewall and monitor the traffic and firewall rules](#task-1--log-on-to-barracuda-firewall-and-monitor-the-traffic-and-firewall-rules)
-        - [Task 2: Configure firewall rules](#task-2--configure-firewall-rules)
-        - [Task 3: Associate route tables to subnets](#task-3--associate-route-tables-to-subnets)
-    - [Exercise 9: Configure Site-to-Site connectivity](#exercise-9--configure-site-to-site-connectivity)
-        - [Task 1: Create OnPrem Virtual Network](#task-1--create-onprem-virtual-network)
-        - [Task 2: Configure gateway subnets for on premise Virtual Network](#task-2--configure-gateway-subnets-for-on-premise-virtual-network)
-        - [Task 3: Create the first gateway](#task-3--create-the-first-gateway)
-        - [Task 4: Create the second gateway](#task-4--create-the-second-gateway)
-        - [Task 5: Connect the gateways](#task-5--connect-the-gateways)
-    - [Exercise 10: Validate connectivity from 'on-premises' to Azure](#exercise-10--validate-connectivity-from-on-premises-to-azure)
-        - [Task 1: Create a virtual machine to validate connectivity](#task-1--create-a-virtual-machine-to-validate-connectivity)
-        - [Task 2: Configure routing for simulated 'on-premises' to Azure traffic](#task-2--configure-routing-for-simulated-on-premises-to-azure-traffic)
+    - [Exercise 1: Create a Virtual Network and provision subnets](#exercise-1-create-a-virtual-network-and-provision-subnets)
+        - [Task 1: Create a Virtual Network](#task-1-create-a-virtual-network)
+        - [Task 2: Configure subnets](#task-2-configure-subnets)
+    - [Exercise 2: Create second Virtual Network and provision subnets](#exercise-2-create-second-virtual-network-and-provision-subnets)
+        - [Task 1: Create a second Virtual Network](#task-1-create-a-second-virtual-network)
+        - [Task 2: Configure Subnets](#task-2-configure-subnets)
+    - [Exercise 3: Create route tables with required routes](#exercise-3-create-route-tables-with-required-routes)
+        - [Task 1: Create route tables](#task-1-create-route-tables)
+        - [Task 2: Add routes to each route table](#task-2-add-routes-to-each-route-table)
+    - [Exercise 4: Deploy n-tier application and validate functionality](#exercise-4-deploy-n-tier-application-and-validate-functionality)
+        - [Task 1: Use the Azure portal for a template deployment](#task-1-use-the-azure-portal-for-a-template-deployment)
+        - [Task 2: Validate the CloudShop application is up after the deployment](#task-2-validate-the-cloudshop-application-is-up-after-the-deployment)
+        - [Task 3: Create a load balancer to distribute load between the web servers](#task-3-create-a-load-balancer-to-distribute-load-between-the-web-servers)
+        - [Task 4: Configure the load balancer](#task-4-configure-the-load-balancer)
+    - [Exercise 5: Build the management station](#exercise-5-build-the-management-station)
+        - [Task 1: Build the management VM](#task-1-build-the-management-vm)
+    - [Exercise 6: Virtual Network Peering](#exercise-6-virtual-network-peering)
+        - [Task 1: Configure VNet peering WGVNET1 to WGVNET2](#task-1-configure-vnet-peering-wgvnet1-to-wgvnet2)
+        - [Task 2: Configure VNet peering WGVNET2 to WGVNET1](#task-2-configure-vnet-peering-wgvnet2-to-wgvnet1)
+    - [Exercise 7: Provision and configure partner firewall solution](#exercise-7-provision-and-configure-partner-firewall-solution)
+        - [Task 1: Provision the firewall appliance](#task-1-provision-the-firewall-appliance)
+        - [Task 2: Enable IP forwarding on the firewall network interface](#task-2-enable-ip-forwarding-on-the-firewall-network-interface)
+    - [Exercise 8: Configure the firewall to control traffic flow](#exercise-8-configure-the-firewall-to-control-traffic-flow)
+        - [Task 1: Log on to Barracuda firewall and monitor the traffic and firewall rules](#task-1-log-on-to-barracuda-firewall-and-monitor-the-traffic-and-firewall-rules)
+        - [Task 2: Configure firewall rules](#task-2-configure-firewall-rules)
+        - [Task 3: Associate route tables to subnets](#task-3-associate-route-tables-to-subnets)
+    - [Exercise 9: Configure Site-to-Site connectivity](#exercise-9-configure-site-to-site-connectivity)
+        - [Task 1: Create OnPrem Virtual Network](#task-1-create-onprem-virtual-network)
+        - [Task 2: Configure gateway subnets for on premise Virtual Network](#task-2-configure-gateway-subnets-for-on-premise-virtual-network)
+        - [Task 3: Create the first gateway](#task-3-create-the-first-gateway)
+        - [Task 4: Create the second gateway](#task-4-create-the-second-gateway)
+        - [Task 5: Connect the gateways](#task-5-connect-the-gateways)
+    - [Exercise 10: Validate connectivity from 'on-premises' to Azure](#exercise-10-validate-connectivity-from-on-premises-to-azure)
+        - [Task 1: Create a virtual machine to validate connectivity](#task-1-create-a-virtual-machine-to-validate-connectivity)
+        - [Task 2: Configure routing for simulated 'on-premises' to Azure traffic](#task-2-configure-routing-for-simulated-on-premises-to-azure-traffic)
     - [After the hands-on lab](#after-the-hands-on-lab)
 
 <!-- /TOC -->
@@ -75,19 +75,9 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 ## Abstract and learning objectives
 
-Students will learn how to setup and configure a Virtual Network with Subnets in Azure. Students will also learn how to secure the Virtual Network with Firewall rules and route tables. Additionally, students will set up access to the Virtual Network with a \"jump box\" and a Site-to-Site VPN connection.
+In this hands-on lab, you will setup and configure a virtual network with subnets in Azure. You will also learn how to secure the virtual network by deploying a network virtual appliances and configure route tables on the subnets in your virtual network. Additionally, you will set up access to the virtual network with a jump box and a site-to-site VPN connection.
 
-Attendees will be better able to plan and design Virtual Networks in Azure with multiple subnets to filter and control network traffic. In addition,
-
--   Create a Virtual Network and provision subnets
-
--   Create route tables with required routes
-
--   Build a management jump box
-
--   Configure firewall to control traffic flow
-
--   Configure Site-to-Site connectivity
+At the end of this hands-on lab, you will be better able to configure Azure networking components. 
 
 
 ## Overview
@@ -150,9 +140,9 @@ Duration: 15 minutes
 
     g.  Subnet address range: **10.7.0.0/29**
 
-Upon completion, it should look like the following screenshot. Validate the information is correct, and select **Create**.
+    Upon completion, it should look like the following screenshot. Validate the information is correct, and select **Create**.
 
- ![](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image26.jpeg)
+    ![The create virtual network dialog is displayed.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image26.jpeg "Create virtual network")
 
 3.  Monitor the deployment status by selecting **Notifications** in the portal. In a minute or so, you should see a confirmation of the successful deployment. Select **Go to Resource**.
 
@@ -178,9 +168,9 @@ Upon completion, it should look like the following screenshot. Validate the info
 
     d.  Route table: **None**
 
-When your dialog looks like the following screenshot, choose **OK** to create the subnet.
+    When your dialog looks like the following screenshot, choose **OK** to create the subnet.
 
-![Field values in the Add Subnet blade are set to the previously defined settings.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image30.png "Add Subnet blade")
+    ![Field values in the Add Subnet blade are set to the previously defined settings.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image30.png "Add Subnet blade")
 
 ## Exercise 2: Create second Virtual Network and provision subnets
 
@@ -238,11 +228,11 @@ Duration: 15 minutes
 
     h.  Route table: **None**
 
-When your dialog looks like the following screenshot, select **OK** to create the subnet.
+    When your dialog looks like the following screenshot, select **OK** to create the subnet.
 
     The result should look like the following screenshot:
 
-![This is the confirmation to a successful creation of a Virtual Network.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image33.jpeg "Subnets blade")
+    ![This is the confirmation to a successful creation of a Virtual Network.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image33.jpeg "Subnets blade")
 
 ## Exercise 3: Create route tables with required routes
 
@@ -270,7 +260,7 @@ Route Tables are containers for User Defined Routes (UDRs). The route table is c
 
     d.  Location: **South Central**
 
-When the dialog looks like the following screenshot, select Create.
+    When the dialog looks like the following screenshot, select Create.
     ![This represents completed fields when initially creating a route table.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image36.jpeg "Create route table")
 
 4.  After a few seconds, if the new route table does not show in the portal, select **Refresh**
@@ -343,9 +333,9 @@ When the dialog looks like the following screenshot, select Create.
 
     ![This is a repetition to the earlier steps in creating a route table.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image42.jpeg "Edit route")
 
-Upon completion, your routes in the **DataRT** route table should look like the following screenshot:
+    Upon completion, your routes in the **DataRT** route table should look like the following screenshot:
 
-![DataRT route table is seen here if successful.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image43.jpeg "Route table ")
+    ![DataRT route table is seen here if successful.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image43.jpeg "Route table ")
 
 5.  Using the breadcrumb menu at the top of the portal, select **Route tables** to go back to that blade
 
@@ -509,7 +499,7 @@ NOTE: If you have not downloaded the student files see this section in the befor
 
 6.  When logging on for the first time, you will have a prompt asking about network discovery. Select **No**.
 
-    ![The Networks prompt asks if you want to find other computers, devices and content automatically. The No button is selected.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image15.png "Networks prompt")
+    ![The Networks prompt asks if you want to find other computers, devices and content automatically. The No button is selected.](images/Setup/image15.png "Networks prompt")
 
 7.  Notice that Server Manager opens by default. Choose **Local Server**.
 
@@ -521,13 +511,13 @@ NOTE: If you have not downloaded the student files see this section in the befor
 
 9.  Change to **Off** for Administrators, and select **OK**
 
-    ![In the Internet Explorer Enhanced Security Configuration dialog box, the Administrators Off radio button is selected, and the OK button is selected as well.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image18.png "Internet Explorer Enhanced Security Configuration")
+    ![In the Internet Explorer Enhanced Security Configuration dialog box, the Administrators Off radio button is selected, and the OK button is selected as well.](images/Setup/image18.png "Internet Explorer Enhanced Security Configuration")
 
 10. You will now ensure the CloudShop application is up and running. Open Internet explorer, and browse to both the WGWEB1 and WGWEB2 servers.
 
-http://wgweb1
+    http://wgweb1
 
-http://wgweb2
+    http://wgweb2
 
 ### Task 3: Create a load balancer to distribute load between the web servers
 
@@ -951,7 +941,7 @@ In this exercise, we will simulate an on-premises connection to the internal web
 
 1.  Using the Azure Management portal, choose **New**, **Networking**, and **Virtual network**
 
-![In the Azure Portal, New is selected. Under Azure Marketplace, Networking is selected, and under Featured, Virtual Network, Learn more is selected.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image120.png "Azure Portal")
+    ![In the Azure Portal, New is selected. Under Azure Marketplace, Networking is selected, and under Featured, Virtual Network, Learn more is selected.](images/Hands-onlabstep-by-step-Enterprise-classnetworkinginAzureimages/media/image120.png "Azure Portal")
 
 2.  See the following screenshot, and specify the configuration:
 
@@ -1029,7 +1019,7 @@ In this exercise, we will simulate an on-premises connection to the internal web
 
 4.  One of the last configurable options is the **Location**. Choose the Azure region where **WGVNet1** exists (Southcentral US if following this guide).
 
-**Note: If you don't choose the location right after you put the name, right Virtual Network will not appear to create the Gateway.**
+    **Note: If you don't choose the location right after you put the name, right Virtual Network will not appear to create the Gateway.**
 
 5.  In the **Virtual network** section, select **Choose a Virtual Network** followed by **WGVNet1**
 
