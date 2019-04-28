@@ -24,7 +24,7 @@ In this whiteboard design session, you will look at the process of configuring a
 At the end of this whiteboard design session, you will be better able to design solutions using Azure Networking features and capabilities
 
 ### Hands-on Lab
-In this hands-on lab, you will setup and configure a virtual network with subnets in Azure. You will learn how to secure the virtual network by deploying network virtual appliances and configure route tables on the subnets. Additionally, you will set up access to the virtual network with a jump box and a site-to-site VPN connection.
+In this hands-on lab, you will setup and configure virtual networks with subnets in Azure. You will also learn how to secure virtual networks by implementing Azure Firewall, service endpoints, network security groups and application security groups, as well as configure route tables on the subnets in your virtual network. Additionally, you will set up access to the virtual network via a jump box and provision a site-to-site VPN connection from another virtual network, providing emulation of hybrid connectivity from an on-premises environment.
 
 At the end of this hands-on lab, you will be better able to configure Azure networking components.
 
@@ -33,9 +33,11 @@ At the end of this hands-on lab, you will be better able to configure Azure netw
 - Azure PowerShell
 - Azure Virtual Networks 
 - Azure Load Balancing
-- Network Virtual Appliances in Azure
+- Azure Firewall
 - Azure Site to Site connectivity
 - Azure Site to on-premises connectivity
+- Network Security Groups and Application Security Groups
+- Azure Service Endpoints
 
 ## Azure solutions
 DC Migration
