@@ -140,7 +140,7 @@ If you are working on a machine that cannot run PowerShell, carry out this task.
 
 ### Task 3: Download hands-on lab step-by-step support files
 
-1.  Within the Remote Deskto session to **LABVM**, open Internet Explorer and download the zipped hands-on lab step-by-step student files by selecting this link: <https://github.com/microsoft/MCW-Enterprise-class-networking/tree/master/Hands-on%20lab/labfiles/ECN-Hackathon.zip>
+1.  Within the Remote Desktop session to **LABVM**, open Internet Explorer and download the zipped hands-on lab step-by-step student files by selecting this link: <https://github.com/microsoft/MCW-Enterprise-class-networking/tree/master/Hands-on%20lab/labfiles/ECN-Hackathon.zip>
 
 1.  Extract the downloaded files into the directory **C:\\ECN-Hackathon**.
 
