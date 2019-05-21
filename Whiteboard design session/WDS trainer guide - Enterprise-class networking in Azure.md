@@ -1,4 +1,4 @@
-
+﻿
 ![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
@@ -10,7 +10,7 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-August 2018
+May 2019
 </div>
 
 Information in this document, including URL and other Internet Website references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -19,50 +19,37 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2018 Microsoft Corporation. All rights reserved.
+© 2019 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
 **Contents**
-
 <!-- TOC -->
 
 - [Trainer information](#trainer-information)
     - [Role of the trainer](#role-of-the-trainer)
     - [Whiteboard design session flow](#whiteboard-design-session-flow)
-    - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session--how-to-prepare)
-    - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session--tips-for-an-effective-whiteboard-design-session)
+    - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
+    - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
 - [Enterprise-class networking in Azure whiteboard design session student guide](#enterprise-class-networking-in-azure-whiteboard-design-session-student-guide)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
+    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
         - [Customer background](#customer-background)
         - [Customer situation](#customer-situation)
         - [Customer needs](#customer-needs)
         - [Customer objections](#customer-objections)
         - [Infographic for common scenarios](#infographic-for-common-scenarios)
-    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
-        - [ExpressRoute integration](#expressroute-integration)
-        - [Virtual network design in Azure](#virtual-network-design-in-azure)
-    - [Step 3: Present the solution](#step-3--present-the-solution)
+    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
+    - [Step 3: Present the solution](#step-3-present-the-solution)
     - [Wrap-up](#wrap-up)
     - [Additional references](#additional-references)
 - [Enterprise-class networking in Azure whiteboard design session trainer guide](#enterprise-class-networking-in-azure-whiteboard-design-session-trainer-guide)
-    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
-    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3--present-the-solution)
-    - [Wrap-up](#wrap-up)
+    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
+    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
+    - [Step 3: Present the solution](#step-3-present-the-solution-1)
+    - [Wrap-up](#wrap-up-1)
     - [Preferred target audience](#preferred-target-audience)
     - [Preferred solution](#preferred-solution)
-        - [Solutions for Cloud web app deployment](#solutions-for-cloud-web-app-deployment)
-        - [ExpressRoute configuration details](#expressroute-configuration-details)
-        - [ExpressRoute prerequisites](#expressroute-prerequisites)
-        - [ExpressRoute connectivity type for Chicago](#expressroute-connectivity-type-for-chicago)
-        - [ExpressRoute connectivity type for Plano](#expressroute-connectivity-type-for-plano)
-        - [ExpressRoute integration NAT requirements](#expressroute-integration-nat-requirements)
-        - [ExpressRoute availability](#expressroute-availability)
-        - [Next-generation firewall HA configuration](#next-generation-firewall-ha-configuration)
-        - [Managing traffic routing](#managing-traffic-routing)
-        - [Network Security Group usage](#network-security-group-usage)
     - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
     - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
 
@@ -234,31 +221,47 @@ Woodgrove's business critical applications include:
 
 -   Email (Exchange Server 2010 taking advantage of Database Availability Groups that span their two datacenters).
 
-Woodgrove's pilot deployment of cloud-native application include:
+Woodgrove has also a large number of multi-tier custom business apps that, due to their legacy dependencies, will likely be migrated to Azure IaaS.
 
--   They want to run marketing web application on the cloud as a pilot basis. The application should use PaaS rather than IaaS.
+Woodgrove's pilot deployment of cloud-native applications will include:
 
--   To support their strategy of embracing cloud technologies, Network and security team have agreed not to redirect Internet traffic via their on-premises security gateway for this deployment. They are looking for a Cloud-native security solution.
+-   Implementing a simple marketing web application in Azure. The application should use PaaS rather than IaaS.
+
+-   Identifying an alternative to forced tunneling. To support the strategy of embracing cloud technologies, Network and security team are considering alternatives to redirecting  Internet traffic via an on-premises security gateway for this deployment. They are looking for a Cloud-native security solution.
+
+-   Evaluating options for securing multi-tier business apps. Woodgrove IT is considering leveraging Azure Network Security Groups in combination with Application Security Groups.
+
+-   Securing connectivity to Azure PaaS. To minimize exposure of Azure PaaS services via public endpoints, Woodgrove's Information Security requested that communication between Azure IaaS and Azure PaaS services does not rely on public endpoints, whenever possible.
+
 
 ### Customer needs 
 
-1.  A detailed architecture and plan for providing robust, secure connectivity between their datacenters and Azure. It will support migration efforts and connectivity from their branch offices to Azure to allow connectivity to migrated applications. This solution should be able to continue to provide connectivity in the case of a severe connectivity partner outage.
+1.  A detailed architecture and plan for providing robust, secure connectivity between their datacenters and Azure. The plan must support migration efforts and connectivity from the branch offices to Azure to allow connectivity to migrated applications. The solution should be able to continue to provide connectivity in the case of a severe connectivity partner outage.
 
-2.  A detailed architecture and plan for providing an enterprise-class networking scenario supporting secure data flow between tiers in an n-tier application. All components of the design must be highly available.
+2.  A detailed architecture and plan for providing an enterprise-class networking scenario supporting secure data flow between tiers in the core banking application. All components of the design must be highly available.
 
-3.  The result of needs one and two should be a network design that allows their applications to run both on-premises and in Azure.
+3.  The result of needs one and two should be a network design that allows applications to run both on-premises and in Azure.
 
-4.  All Internet traffic must be passed through an on-premises intrusion detection or prevention system to comply with company policy.
+4.  For the time being, all Internet traffic must be passed through an on-premises intrusion detection or prevention system to comply with company policy.
 
-5.  All the incoming traffic must be inspected in order to make sure it blocks sql injections, cross-site scripting and other web attacks such as http protocol violation etc.
+5.  All the incoming traffic must be inspected in order to ensure protection against sql injections, cross-site scripting and other web attacks such as http protocol violation etc.
 
-6.  All the traffic that will hit the cloud-based marketing web app will not be passed through on premises network. An alternative cloud-native security solution is required.
+6.  All traffic targeting the cloud-based marketing web app will not be passed through on premises network. An alternative cloud-native security solution is required.
 
-7.  URL based routing, redirection, SSL termination will need to be on the FW/LB level for the new cloud web apps.
+7.  URL based routing, redirection, SSL termination will need to be implemented on the FW/LB level for the new cloud web apps.
+   
+8.  DDoS protection plan must be configured for the Virtual Network which will host the Data and Web tiers of the core banking application.
+   
+9.  All traffic that goes in and out of Azure virtual networks must be filtered and passed through a firewall appliance.  
+    
+10. All traffic that goes through ExpressRoute circuit needs to be distributed based on business units and will have granular control of circuit distributions.
+
+11. ExpressRoute circuits need to be link together to make a private network so that data can directly exchange between offices.
+
 
 ### Customer objections 
 
-1.  As a financial institution, Woodgrove is under tight regulatory compliance requirements. Security is a key aspect of compliance and as such, it must be a key tenant of all operations including those related to technology. The corporate security officer is generally opposed to using services solely accessible over the public Internet. Services like Office 365, CRM, and other Microsoft SaaS offerings are off limits. Additionally, PaaS services accessed over the Internet are also unusable. It has relegated Woodgrove to private Azure services such as IaaS.
+1.  As a financial institution, Woodgrove is under tight regulatory compliance requirements. Security is a key aspect of compliance and as such, it must be a key tenet of all operations including those related to technology. The corporate security officer is generally opposed to using services solely accessible over the public Internet. Services like Office 365, CRM, and other Microsoft SaaS offerings are off limits. Additionally, PaaS services accessed over the Internet are also unusable. It has relegated Woodgrove to private Azure services such as IaaS.
 
 2.  The director of Network Operations is under the impression that complex enterprise-grade networking scenarios, such as those that support n-tier applications, cannot be configured in hyper-scale public clouds. Trust comes slowly with this director. She will most likely need detailed solution plans, case studies, and even customer testimonials to help convince her of the viability of anything other than simple networking scenarios in Azure.
 
@@ -266,7 +269,6 @@ Woodgrove's pilot deployment of cloud-native application include:
 
 4.  The corporate compliance officer of Woodgrove must ensure compliance with many requirements to ensure his organization passes audits from both internal and external entities. One requirement is all outbound Internet requests must pass through an on-premises system that inspects and logs this traffic. The CCO is skeptical of IaaS solutions in Azure since "those VMs in the cloud can access the Internet directly."
 
-5.  Woodgrove has an arduous process for testing vendor-supplied solutions. In the network space, they have standardized on 3rd party solutions for network and application firewalls with existing vendors. They would like to use their trusted vendors to support cloud-based configurations as much as possible.
 
 ### Infographic for common scenarios
 
@@ -294,41 +296,23 @@ Directions: With all participants at your table, respond to the following questi
 
 The desired outcome is a network architecture that meets the needs of a modern financial services organization. This design will not have single points of failure and will include concepts such as a perimeter network with redundant firewalls protecting the internal subnets containing the application tiers. A simple network design will most likely confirm the director of Network Operation's beliefs that Azure cannot support real-world, enterprise-class networking (see customer objections)---*prove her wrong!*
 
-### ExpressRoute integration
+*High-Level architecture*
 
--   Which peering options and other ExpressRoute features would be required?
+1. Create a high-level architecture diagram and explanation of the components of your solution. 
 
--   Diagram at a high-level the workflow that Woodgrove will follow to enable ExpressRoute in its environment.
+*Address the following customer requirements*
 
--   Identify the information you would need to collect to configure peering and the NAT requirements for the solution.
+1. Explain the approach you would take to deploying ExpressRoute Circuits including location and circuit size.
 
--   How will you address providing connectivity in the event of a major connectivity provider outage?
+2. What ExpressRoute peering options you would enable and what workloads would use them? Diagram your peering configuration including subnet, IP and autonomous system number configuration needed.
 
--   Be sure your design considers the international needs of the organization.
+3. What are the NAT requirements for ExpressRoute integration?
 
-### Virtual network design in Azure
+4. How does your design address availability at the network layer?
 
-The network team at Woodgrove is giving you an address space of 10.7.0.0/16 and 10.10.1.0/24 to work with on this project.
+5. How is routing configured in your overall design?
 
--   How will you design the address space and subnets to support Woodgrove's requirements?
-
--   Will your design take advantage of network virtual appliances? If so, how will you ensure network traffic is processed by the appliances?
-
--   How will your design distribute load to both internal and external application servers?
-
--   How will your design ensure no single point of failure exists?
-
--   How would you test the resiliency of the design in practice?
-
--   Are there networking features in Azure that could be used to have access to higher bandwidth connections for compute resources? What are the requirements to use this service?
-
--   How could secure remote administration of the Azure environment be achieved with an administrator working from home?
-
--   Note all special requirements for any virtual appliance use in this scenario.
-
--   What other measures will you use to protect Woodgrove at the network layer?
-
--   How will you address the requirement that all Internet traffic be directed through Woodgrove's security appliance (intrusion prevention/detection)?
+6. Identify where Network Security Groups are used in your design.
 
 **Prepare**
 
@@ -379,19 +363,21 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 |    |            |
 |----------|:-------------:|
 | **Description** | **Links** |
-| IP Addressing and Subnetting for New Users                | <http://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html> |
-| CIDR / VLSM Supernet Calculator                           | <http://www.subnet-calculator.com/cidr.php>                                                  |
-| ExpressRoute documentation                                | <https://azure.microsoft.com/en-us/documentation/services/expressroute/>                       |
-| ExpressRoute Routing requirements                         | <https://azure.microsoft.com/en-us/documentation/articles/expressroute-routing/>               |
-| ExpressRoute NAT requirements                             | <https://azure.microsoft.com/en-us/documentation/articles/expressroute-nat/>                   |
-| ExpressRoute workflows                                    | <https://azure.microsoft.com/en-us/documentation/articles/expressroute-workflows/>             |
-| Site-to-Site VPN documentation                            | <https://azure.microsoft.com/en-us/documentation/services/vpn-gateway/>                        |
-| Virtual Network documentation                             | <https://azure.microsoft.com/en-us/documentation/services/virtual-network/>                    |
-| Network Security Group documentation                      | <https://azure.microsoft.com/en-us/documentation/articles/virtual-networks-nsg/>               |
-| User-Defined Routing and IP Forwarding                    | <https://azure.microsoft.com/en-us/documentation/articles/virtual-networks-udr-overview/>      |
-| Load Balancer                                             | <https://azure.microsoft.com/en-us/documentation/articles/load-balancer-overview/>             |
-| Microsoft Azure Virtual Datacenter: A Network Perspective | https://docs.microsoft.com/en-us/azure/networking/networking-virtual-datacenter                |
-| Deploy highly available network virtual appliances        | https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/dmz/nva-ha         |
+| IP Addressing and Subnetting for New Users                | <http://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html>      |
+| CIDR / VLSM Supernet Calculator                           | <http://www.subnet-calculator.com/cidr.php>                                                       |
+| ExpressRoute documentation                                | <https://azure.microsoft.com/en-us/documentation/services/expressroute/>                          |
+| ExpressRoute Routing requirements                         | <https://azure.microsoft.com/en-us/documentation/articles/expressroute-routing/>                  |
+| ExpressRoute NAT requirements                             | <https://azure.microsoft.com/en-us/documentation/articles/expressroute-nat/>                      |
+| ExpressRoute workflows                                    | <https://azure.microsoft.com/en-us/documentation/articles/expressroute-workflows/>                |
+| Site-to-Site VPN documentation                            | <https://azure.microsoft.com/en-us/documentation/services/vpn-gateway/>                           |
+| Virtual Network documentation                             | <https://azure.microsoft.com/en-us/documentation/services/virtual-network/>                       |
+| Network Security Group documentation                      | <https://azure.microsoft.com/en-us/documentation/articles/virtual-networks-nsg/>                  |
+| User-Defined Routing and IP Forwarding                    | <https://azure.microsoft.com/en-us/documentation/articles/virtual-networks-udr-overview/>         |
+| Load Balancer                                             | <https://azure.microsoft.com/en-us/documentation/articles/load-balancer-overview/>                |
+| Microsoft Azure Virtual Datacenter: A Network Perspective | https://docs.microsoft.com/en-us/azure/networking/networking-virtual-datacenter                   |
+| Deploy highly available network virtual appliances        | https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/dmz/nva-ha            |
+| Azure Firewall Documentation                              | https://docs.microsoft.com/en-us/azure/firewall/                                                  |
+| Virtual Network Service Endpoints                         | https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview |
 
 # Enterprise-class networking in Azure whiteboard design session trainer guide
 
@@ -447,311 +433,321 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 ## Preferred solution
 
+*High-level architecture*
+
+1. Create a high-level architecture diagram and explanation of the components of your solution.
+
 The solution for Woodgrove involved several technologies, including:
 
--   Implementing ExpressRoute with private and Microsoft peering enabled for connectivity for its virtual machines/Virtual Networks, and potential future plans for accessing Microsoft public services.
+-   ExpressRoute with private and Microsoft peering enabled for connectivity for its virtual machines/Virtual Networks, and potential future plans for accessing Microsoft public services.
 
--   Advanced networking can allow certain instance sizes to hit 25 Gbps for accelerated networking scenarios.
+-   Advanced networking, which allows certain instance sizes to hit 25 Gbps for accelerated networking scenarios.
 
--   Testing the resiliency of the networking design would involve taking a link down and ensuring services are still available.
+-   Testing the resiliency of the networking design. which involves taking a link down and ensuring services are still available.
 
--   Just-in-time (JIT) access could be setup for secure remote administration to a Jump box in Azure, this Jump box could be deallocated to reduce costs until required.
+-   Just-in-time (JIT) access for secure remote administration to a Jump box in Azure (this Jump box could be deallocated to reduce costs until required).
 
--   Taking advantage of end-to-end encryption of the ExpressRoute traffic. This part of the solution is enabled by Next-Generation firewalls (NGFW) on both sides of the ExpressRoute connection.
-
--   Implementing an enterprise-class configuration within an Azure Virtual Network to support a 3-tier application. Components of this solution include:
+-   Implementing an enterprise-class configuration within an Azure Virtual Network to support the 3-tier core banking application. Components of this solution include:
 
     -   Multiple Virtual Networks
 
-    -   Six subnets, including a gateway, perimeter, web tier, business tier, data tier, and management subnet.
+    -   Six subnet designations, inclding gateway, perimeter, web tier, business tier, data tier, and management subnet.
 
-    -   Two NGFWs configured in an HA pair providing hybrid connectivity support and internal firewall capabilities internal to the Azure VNet and any paired VNets.
+    -   Azure Firewall configured to provide hybrid connectivity support and internal firewall capabilities internal to the Azure VNet and any paired VNets.
 
     -   Five route tables associated with their corresponding subnets, each with specific user defined routes configured.
 
     -   Five Network Security Groups associated with their respective subnets, each with specific allow/deny rules configured.
 
+    -   Application Security Groups (three per each multi-tier legacy business app) to secure traffic within the same subnet, along with the corresponding Network Security Groups.
+
     -   Three internal Azure Load Balancers to direct load to the primary NGFW and to the servers in each application tier.
 
-    -   One application gateway to load-balancer and provide Layer-7 (WAG and WAF) protection to the Web tier.
+    -   One application gateway to load balance incoming traffic and provide Layer-7 (WAG and WAF) protection of the Web tier.
 
-    -   Configuration of Virtual Network Service endpoints to further secure access to PaaS services such as storage and Azure SQL.
+    -   Virtual Network Service endpoints to further secure access to PaaS services such as storage and Azure SQL.
 
--   Implement a WAF in order to inspect and protect incoming traffic.
+-   Implementing a WAF in order to inspect and protect incoming traffic.
 
-      -   Application G will be used.
+      -   Application Gateway will be used.
 
-      -   Azure Web App will be configured as backend back-end pool member of Application G.
+      -   Azure Web Apps will be configured as back-end pool members of Application Gateway.
 
-    -   To ensure end users will hit the App Gw, a CNAME record can be used to point to the public endpoint of the application gateway.
+    -   To ensure that incoming traffic is directed via the Application Gateway, a CNAME record can be used to designate the public endpoint of the application gateway.
 
-    -   To create the alias, it needs Public IP Address and DNS name attached to the App Gw.
+      -   To create the CNAME record, it is necessary to create a public IP address resource and assign to it a DNS name.
 
-### Solutions for Cloud web app deployment
+-   Implementing DDoS protection services for the virtual networks hosting Data and Web tiers in order to protect them against DDoS attacks.
+  
+-   Implementing Azure Firewall to make sure it protects and filters all the traffic coming into and going out from the Azure virtual network.
 
-### ExpressRoute configuration details
 
-Two ExpressRoute circuits will be provisioned.
+    ![A diagram that depicts the network flow from two on-premises sites where the traffic flows through Equinix and Level 3 using VPN and ExpressRoute. Multiple virtual networks in Azure are connected via VPN peering.](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/high-level-architecture.png "Preferred Solution")
 
--   The first will be connected in Dallas, TX (corresponding to the Plano, TX Woodgrove datacenter) and will take advantage of level 3 Communications as the connectivity provider.
 
--   The second ExpressRoute circuit will be connected in Chicago, IL (corresponding to Woodgrove's Chicago, IL datacenter) and will take advantage of Equinix as the connectivity provider.
+*Address the following customer requirements*
 
-Taking advantage of different providers will enable Woodgrove to maintain robust connectivity to Azure even in the case of a catastrophic provider issue.
 
-Because of the potential of large amounts of data movement back and forth between Azure and the on-premises environment, the unlimited licensing option was chosen for both ExpressRoute circuits. From a bandwidth perspective, after completing a study of current bandwidth usage trends, 1 Gbps circuit sizes were selected for both ExpressRoute circuits.
+1. Explain the approach you would take to deploying ExpressRoute Circuits including location and circuit size.*
 
-### ExpressRoute prerequisites
+    Two ExpressRoute circuits will be provisioned.
 
-After learning that, with ExpressRoute, PaaS services do not traverse the Internet, there was renewed interest in planning for PaaS adoption. These needs, in conjunction with connecting to private services (such as IaaS), dictate for the ExpressRoute circuits to be set up for private and public peering.
+    -   The first will be connected in Dallas, TX (corresponding to the Plano, TX Woodgrove datacenter) and will take advantage of level 3 Communications as the connectivity provider.
 
-![This image represents private and public peering for the ExpressRoute circuits.](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/image7.png)
+    -   The second will be connected in Chicago, IL (corresponding to Woodgrove's Chicago, IL datacenter) and will take advantage of Equinix as the connectivity provider.
 
-Figure 2 - Peering for ExpressRoute
+    Taking advantage of different providers will enable Woodgrove to maintain robust connectivity to Azure even in the case of a catastrophic provider issue.
 
-**Private peering**
+    Because of the potential of large amounts of data movement back and forth between Azure and the on-premises environment, the unlimited licensing option was chosen for both ExpressRoute circuits. From a bandwidth perspective, after completing a study of current bandwidth usage trends, 1 Gbps circuit sizes were selected for both ExpressRoute circuits.
 
-To support private peering, Woodgrove needed to provide addresses from a range that does not overlap with internal networks or Azure-based Virtual Networks. The addresses can be public or private. They need to provide either a single /29 or two /30 subnets (a /29 will be broken up into 2 /30 subnets). Woodgrove chose to use:
 
--   10.0.5.0/30
+2. What ExpressRoute peering options you would enable and what workloads would use them? Diagram your peering configuration including subnet, IP and autonomous system number configuration needed.
 
--   10.0.5.4/30
+    After learning that, with ExpressRoute, PaaS services do not traverse the Internet, there was renewed interest in planning for PaaS adoption. These needs, in conjunction with connecting to private services (such as IaaS), dictate for the ExpressRoute circuits to be set up for private and public peering.
 
-Addresses from the two subnets will be used to establish two private peering for redundancy.
+    ![This image represents private and public peering for the ExpressRoute circuits.](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/image7.png)
 
-![The Link 1 table lists two IP addresses for Customer/Provider use, and Microsoft use: 10.0.5.1/30, and 10.0.5.2/30.](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/image8.png "Link 1 table")
+    Figure 2 - Peering for ExpressRoute
 
-![The Link 2 table lists two IP addresses for Customer/Provider use, and Microsoft use: 10.0.5.5/30, and 10.0.5.6/30.](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/image9.png "Link 2 table")
+    **Private peering**
 
-**Microsoft peering**
+    To support private peering, Woodgrove needed to provide addresses from a range that does not overlap with internal networks or Azure-based Virtual Networks. The addresses can be public or private. They need to provide either a single /29 or two /30 subnets (a /29 will be broken up into 2 /30 subnets). Woodgrove chose to use:
 
-Woodgrove needed to provide public IP addresses they own to set up Microsoft peering. Microsoft must be able to verify the ownership of the IP addresses through Routing Internet Registries and Internet Routing Registries. Additionally, Woodgrove must use their registered Autonomous System (AS) number in the peering configuration. Woodgrove's registered AS number is AS20046. They chose to use the following from their public IP addresses:
+    -   10.0.5.0/30
 
--   72.191.44.0/30
+    -   10.0.5.4/30
 
--   72.191.44.4/30
+    Addresses from the two subnets will be used to establish two private peering for redundancy.
 
-![This table lists the IP addresses and Autonomous System Numbers for Customer/Provider use and Microsoft use. IP Addresses are 72.191.44.1/30, and 72.191.44.2/30. ](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/image10.png "Link 1 table")
+    ![The Link 1 table lists two IP addresses for Customer/Provider use, and Microsoft use: 10.0.5.1/30, and 10.0.5.2/30.](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/image8.png "Link 1 table")
 
-![This table lists the IP addresses and Autonomous System Numbers for Customer/Provider use and Microsoft use. IP Addresses are now 72.191.44.5/30, and 72.191.44.6/30.](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/image11.png "Link 2 table")
+    ![The Link 2 table lists two IP addresses for Customer/Provider use, and Microsoft use: 10.0.5.5/30, and 10.0.5.6/30.](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/image9.png "Link 2 table")
 
-###  ExpressRoute connectivity type for Chicago 
+    **Microsoft peering**
 
-Woodgrove Financial Services happen to use colocation datacenter space at a facility in which Equinix has a presence. As a result, it made sense to connect the ExpressRoute circuit in Chicago using virtual cross-connections through Equinix's Ethernet exchange. To reduce cost, Woodgrove chose Equinix's unmanaged layer 2 connectivity. It requires Woodgrove networking staff to provision redundant edge routers and to configure all BGP peering. Specifically, they will need to:
+    Woodgrove needed to provide public IP addresses they own to set up Microsoft peering. Microsoft must be able to verify the ownership of the IP addresses through Routing Internet Registries and Internet Routing Registries. Additionally, Woodgrove must use their registered Autonomous System (AS) number in the peering configuration. Woodgrove's registered AS number is AS20046. They chose to use the following from their public IP addresses:
 
--   Create an ExpressRoute circuit by using the following command:
+    -   72.191.44.0/30
 
-```
-    New-AzureRmExpressRouteCircuit -Name <<circuit-name>> -ResourceGroupName <<resource-group>> -Location <<location>> -SkuTier <<sku-tier>> `
+    -   72.191.44.4/30
 
-> -SkuFamily <<sku-family>> -ServiceProviderName <<service-provider-name>> -PeeringLocation <<peering-location>> -BandwidthInMbps <<bandwidth-in-mbps>>
-```
+    ![This table lists the IP addresses and Autonomous System Numbers for Customer/Provider use and Microsoft use. IP Addresses are 72.191.44.1/30, and 72.191.44.2/30. ](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/image10.png "Link 1 table")
 
--   Send the ServiceKey for the new circuit to the service provider.
+    ![This table lists the IP addresses and Autonomous System Numbers for Customer/Provider use and Microsoft use. IP Addresses are now 72.191.44.5/30, and 72.191.44.6/30.](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/image11.png "Link 2 table")
 
--   Wait for the provider to provision the circuit. You can verify the provisioning state of a circuit by using the following PowerShell command:
+    **ExpressRoute connectivity type for Chicago**
 
-```
- Get-AzureRmExpressRouteCircuit -Name <<circuit-name>> -ResourceGroupName <<resource-group>>
-```
+    Woodgrove Financial Services happen to use co-location datacenter space at a facility in which Equinix has a presence. As a result, it made sense to connect the ExpressRoute circuit in Chicago using virtual cross-connections through Equinix's Ethernet exchange. To reduce cost, Woodgrove chose Equinix's unmanaged layer 2 connectivity. It requires Woodgrove networking staff to provision redundant edge routers and to configure all BGP peering. Specifically, they will need to:
 
--   Reserve two /30 subnets for each peering type desired (private or public for private peering and public for public or Microsoft peering). These /30 subnets will be used to provide IP addresses for the routers used for the circuit.
+    -   Create an ExpressRoute circuit by using the following command:
 
--   Configure routing for the ExpressRoute circuit. You need to run the command below for each type of peering you want to configure (private, public, and Microsoft).
+    ```
+        New-AzureRmExpressRouteCircuit -Name <<circuit-name>> -ResourceGroupName <<resource-group>> -Location <<location>> -SkuTier <<sku-tier>> `
 
-```
- Set-AzureRmExpressRouteCircuitPeeringConfig -Name <<peering-name -Circuit <<circuit-name -PeeringType <<peering-type -PeerASN <<peer-asn -PrimaryPeerAddressPrefix <<primary-peer-address-prefix -SecondaryPeerAddressPrefix <<secondary-peer-address-prefix -VlanId <<vlan-id
+    > -SkuFamily <<sku-family>> -ServiceProviderName <<service-provider-name>> -PeeringLocation <<peering-location>> -BandwidthInMbps <<bandwidth-in-mbps>>
+    ```
 
- Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit <<circuit-name>>
-```
+    -   Send the ServiceKey for the new circuit to the service provider.
 
--   Reserve another pool of valid Public IP addresses to use for NAT for public and Microsoft peering. We recommend a different pool for each peering. Specify the pool to your connectivity provider, so they can configure BGP advertisements for those ranges.
+    -   Wait for the provider to provision the circuit. You can verify the provisioning state of a circuit by using the following PowerShell command:
 
--   Link your private VNet(s) in the cloud to the ExpressRoute circuit. Use the following PowerShell commands:
+    ```
+    Get-AzureRmExpressRouteCircuit -Name <<circuit-name>> -ResourceGroupName <<resource-group>>
+    ```
 
-```
- $circuit = Get-AzureRmExpressRouteCircuit -Name <<circuit-name -ResourceGroupName <<resource-group
+    -   Reserve two /30 subnets for each peering type desired (private or public for private peering and public for public or Microsoft peering). These /30 subnets will be used to provide IP addresses for the routers used for the circuit.
 
- $gw = Get-AzureRmVirtualNetworkGateway -Name <<gateway-name -ResourceGroupName <<resource-group>>
+    -   Configure routing for the ExpressRoute circuit. You need to run the command below for each type of peering you want to configure (private, public, and Microsoft).
 
- New-AzureRmVirtualNetworkGatewayConnection -Name <<connection-name -ResourceGroupName <<resource-group -Location <<location>> -VirtualNetworkGateway1 $gw -PeerId $circuit.Id -ConnectionType ExpressRoute
-```
+    ```
+    Set-AzureRmExpressRouteCircuitPeeringConfig -Name <<peering-name -Circuit <<circuit-name -PeeringType <<peering-type -PeerASN <<peer-asn -PrimaryPeerAddressPrefix <<primary-peer-address-prefix -SecondaryPeerAddressPrefix <<secondary-peer-address-prefix -VlanId <<vlan-id
 
-Because Woodgrove is using a layer 2 connection in Chicago, they deployed redundant routers in the datacenter in an active-active configuration. They connected the primary circuit to one router and the secondary circuit to the other. It provided a highly available connection at both ends of the connection. It is necessary to realize the ExpressRoute SLA.
+    Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit <<circuit-name>>
+    ```
 
-### ExpressRoute connectivity type for Plano
+    -   Reserve another pool of valid Public IP addresses to use for NAT for public and Microsoft peering. We recommend a different pool for each peering. Specify the pool to your connectivity provider, so they can configure BGP advertisements for those ranges.
 
-At the Plano datacenter, Woodgrove opted to work with level 3 and connect the second ExpressRoute circuit to their existing MPLS cloud. This connectivity type was offered as a managed layer 3 service, which Woodgrove signed up for. The steps to configure ExpressRoute in this case are fewer because the provider configures BGP peering on the customer's behalf. The steps to complete are:
+    -   Link your private VNet(s) in the cloud to the ExpressRoute circuit. Use the following PowerShell commands:
 
--   Create an ExpressRoute circuit by using the following command:
+    ```
+    $circuit = Get-AzureRmExpressRouteCircuit -Name <<circuit-name -ResourceGroupName <<resource-group
 
-```
- New-AzureRmExpressRouteCircuit -Name <<circuit-name -ResourceGroupName <<resource-group -Location <<location -SkuTier <<sku-tier `
-   -SkuFamily <<sku-family -ServiceProviderName <<service-provider-name -PeeringLocation <<peering-location -BandwidthInMbps <<bandwidth-in-mbps>>
-```
+    $gw = Get-AzureRmVirtualNetworkGateway -Name <<gateway-name -ResourceGroupName <<resource-group>>
 
--   Send the ServiceKey for the new circuit to the service provider.
+    New-AzureRmVirtualNetworkGatewayConnection -Name <<connection-name -ResourceGroupName <<resource-group -Location <<location>> -VirtualNetworkGateway1 $gw -PeerId $circuit.Id -ConnectionType ExpressRoute
+    ```
 
--   Wait for the provider to provision the circuit. You can verify the provisioning state of a circuit by using the following PowerShell command:
+    Because Woodgrove is using a layer 2 connection in Chicago, they deployed redundant routers in the datacenter in an active-active configuration. They connected the primary circuit to one router and the secondary circuit to the other. It provided a highly available connection at both ends of the connection. It is necessary to realize the ExpressRoute SLA.
 
-```
- Get-AzureRmExpressRouteCircuit -Name <<circuit-name -ResourceGroupName <<resource-group>>
-```
+    **ExpressRoute connectivity type for Plano**
 
--   Link your private VNet(s) in the cloud to the ExpressRoute circuit. Use the following PowerShell commands:
+    At the Plano datacenter, Woodgrove opted to work with level 3 and connect the second ExpressRoute circuit to their existing MPLS cloud. This connectivity type was offered as a managed layer 3 service, which Woodgrove signed up for. The steps to configure ExpressRoute in this case are fewer because the provider configures BGP peering on the customer's behalf. The steps to complete are:
 
-```
-$circuit = Get-AzureRmExpressRouteCircuit -Name <<circuit-name>> -ResourceGroupName <<resource-group>>
+    -   Create an ExpressRoute circuit by using the following command:
 
-$gw = Get-AzureRmVirtualNetworkGateway -Name <<gateway-name>> -ResourceGroupName <<resource-group>>
+    ```
+    New-AzureRmExpressRouteCircuit -Name <<circuit-name -ResourceGroupName <<resource-group -Location <<location -SkuTier <<sku-tier `
+    -SkuFamily <<sku-family -ServiceProviderName <<service-provider-name -PeeringLocation <<peering-location -BandwidthInMbps <<bandwidth-in-mbps>>
+    ```
 
-New-AzureRmVirtualNetworkGatewayConnection -Name <<connection-name>> -ResourceGroupName <<resource-group>> -Location <<location> -VirtualNetworkGateway1 $gw -PeerId $circuit.Id -ConnectionType ExpressRoute
-```
+    -   Send the ServiceKey for the new circuit to the service provider.
 
-### ExpressRoute integration NAT requirements
+    -   Wait for the provider to provision the circuit. You can verify the provisioning state of a circuit by using the following PowerShell command:
 
-The Azure public peering path enables you to connect to all services hosted in Azure over their Public IP addresses. These services include all services listed in the ExpressRoute FAQ and any services hosted by ISVs on Microsoft Azure. Connectivity to Microsoft Azure services on public peering is always initiated from your network into the Microsoft network. Traffic destined to Microsoft Azure on public peering must be SNATed to valid Public IPv4 addresses before they enter the Microsoft network.
+    ```
+    Get-AzureRmExpressRouteCircuit -Name <<circuit-name -ResourceGroupName <<resource-group>>
+    ```
 
-![The ExpressRoute diagram is made up of three boxes from left to right: Customer Network, Connectivity Provider, and Microsoft Cloud. Within the Customer Network box are user icons in the cloud, and NAT. The Connectivity provider box has a Partner Edge box. Express Route connects The Connectivity Provder box wtih the Microsoft Cloud box, which includes Microsoft Edge and Azure Public Services.](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/image12.png "ExpressRoute ")
+    -   Link your private VNet(s) in the cloud to the ExpressRoute circuit. Use the following PowerShell commands:
 
-Figure : Deprecated public peering SNAT
+    ```
+    $circuit = Get-AzureRmExpressRouteCircuit -Name <<circuit-name>> -ResourceGroupName <<resource-group>>
 
-The Microsoft peering path lets you connect to Microsoft cloud services that are not supported through the Azure public peering path. The list of services includes Office 365 services such as Exchange Online, SharePoint Online, Skype for Business, and CRM Online. Microsoft supports bidirectional connectivity via Microsoft peering. Traffic destined to Microsoft cloud services must be SNATed to valid Public IPv4 addresses before they enter the Microsoft network.
+    $gw = Get-AzureRmVirtualNetworkGateway -Name <<gateway-name>> -ResourceGroupName <<resource-group>>
 
-![The ExpressRoute diagram is made up of three boxes from left to right: Customer Network, Layer 2 Connectivity Provider, and Microsoft Cloud. Within the Customer Network box are user icons in the cloud, and two NAT boxes. The Layer 2 Connectivity provider box has the same Partner Edge box. Express Route connects The Layer 2 Connectivity Provder box wtih the Microsoft Cloud box, which includes Microsoft Edge and Micrsosoft Public Services.](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/image13.png "ExpressRoute")
+    New-AzureRmVirtualNetworkGatewayConnection -Name <<connection-name>> -ResourceGroupName <<resource-group>> -Location <<location> -VirtualNetworkGateway1 $gw -PeerId $circuit.Id -ConnectionType ExpressRoute
+    ```
 
-Figure : Microsoft peering SNAT
+3. What are the NAT requirements for ExpressRoute integration?
 
-### ExpressRoute availability
+    The Azure public peering path enables you to connect to all services hosted in Azure over their Public IP addresses. These services include all services listed in the ExpressRoute FAQ and any services hosted by ISVs on Microsoft Azure. Connectivity to Microsoft Azure services on public peering is always initiated from your network into the Microsoft network. Traffic destined to Microsoft Azure on public peering must be SNATed to valid Public IPv4 addresses before they enter the Microsoft network.
 
-The following diagram shows a configuration with redundant on-premises routers connected to the primary and secondary circuits. Each circuit handles the traffic for a Microsoft peering and a private peering.
+    ![The ExpressRoute diagram is made up of three boxes from left to right: Customer Network, Connectivity Provider, and Microsoft Cloud. Within the Customer Network box are user icons in the cloud, and NAT. The Connectivity provider box has a Partner Edge box. Express Route connects The Connectivity Provder box wtih the Microsoft Cloud box, which includes Microsoft Edge and Azure Public Services.](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/image12.png "ExpressRoute ")
 
-![This diagram depicts redundant on-premises routers connected to he primary and secondary circuits. Each circuit is shown handling the traffic for a Microsoft peering and a private peering.](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/image14.png)
+    Figure : Deprecated public peering SNAT
 
-Figure 4 - Redundancy and Peering with ExpressRoute
+    The Microsoft peering path lets you connect to Microsoft cloud services that are not supported through the Azure public peering path. The list of services includes Office 365 services such as Exchange Online, SharePoint Online, Skype for Business, and CRM Online. Microsoft supports bidirectional connectivity via Microsoft peering. Traffic destined to Microsoft cloud services must be SNATed to valid Public IPv4 addresses before they enter the Microsoft network.
 
-### Next-generation firewall HA configuration
+    ![The ExpressRoute diagram is made up of three boxes from left to right: Customer Network, Layer 2 Connectivity Provider, and Microsoft Cloud. Within the Customer Network box are user icons in the cloud, and two NAT boxes. The Layer 2 Connectivity provider box has the same Partner Edge box. Express Route connects The Layer 2 Connectivity Provder box wtih the Microsoft Cloud box, which includes Microsoft Edge and Micrsosoft Public Services.](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/image13.png "ExpressRoute")
 
-Two NGFW appliances will be configured in the perimeter subnet. These virtual appliances will filter traffic coming in from the Internet and from the on-premises environment. To configure two NGFs in a highly available pair, they may only each have a single NIC, and IP forwarding must be enabled on the NIC for each NGF. Full routing capabilities are available with a single NIC, so it is not a limitation. Both NGFs will participate in an availability set to provide service resiliency during planned and unplanned downtime in Azure. An Azure Load Balancer will be provisioned to forward traffic to the active firewall (one is active at a time).
+    Figure : Microsoft peering SNAT
 
-To learn more about this configuration, read [Deploy highly available network virtual appliances](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/dmz/nva-ha#pip-udr-switch-with-layer-4-nvas). Note that NVAs can be used for both Layer 4 and Layer 7 traffic depending on the appliance.
+4. How does your design address availability at the network layer?
 
-![NVAs seen in Layer 7 of this image.](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/image15.png)
+    The following diagram shows a configuration with redundant on-premises routers connected to the primary and secondary circuits. Each circuit handles the traffic for a Microsoft peering and a private peering.
 
-Figure : Ingress/Egress with layer 7 NVAs
+    ![This diagram depicts redundant on-premises routers connected to he primary and secondary circuits. Each circuit is shown handling the traffic for a Microsoft peering and a private peering.](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/image14.png)
 
-### Managing traffic routing
+    Figure 4 - Redundancy and Peering with ExpressRoute
 
-For many cases, this solution will apply user defined routes to ensure desired routing; however, because ExpressRoute is in use, we must take advantage of BGP routing for some scenarios like force tunneling. In the case of the preferred solution, we are using a BGP route to force outbound Internet traffic back to an on-premises firewall. This device is monitoring outbound traffic for sensitive data such as unencrypted social security numbers, credit card numbers, etc.
+    Azure Firewall has high-availability built-in, so no additional load balancers are required and there is nothing for you to configure for redundancy.
 
-Keep in mind that user defined routing only applies to traffic leaving the subnet they are applied to. Also, the appliance you are forwarding traffic to cannot be in the same subnet where the traffic originates. Always create a separate subnet for your appliances.
 
-**Web tier subnet route table**
+5. How is routing configured in your overall design?
 
-  **Address Prefix**               |  **Next Hop Type** |   **Next Hop Address**
-  --------------------------------- | ------------------- | ----------------------
-  0.0.0.0/0                         | Virtual Appliance  |  10.7.0.38
-  10.10.1.32/27 (Business Tier)    |  Virtual Appliance  |  10.7.0.38
-  10.10.1.64/27 (Data Tier)        |  Virtual Appliance  |  10.7.0.38
-  10.7.255.224/27 (GatewaySubnet)  |  Virtual Appliance  |  10.7.0.38
-  10.7.0.0/27 (MGMT Subnet)        |  Virtual Appliance  |  10.7.0.38
+    For many cases, this solution will apply user defined routes to ensure desired routing; however, because ExpressRoute is in use, we must take advantage of BGP routing for some scenarios like force tunneling. In the case of the preferred solution, we are using a BGP route to force outbound Internet traffic back to an on-premises firewall. This device is monitoring outbound traffic for sensitive data such as unencrypted social security numbers, credit card numbers, etc.
 
-**Business tier subnet route table**
+    Keep in mind that user defined routing only applies to traffic leaving the subnet they are applied to. Also, the appliance you are forwarding traffic to cannot be in the same subnet where the traffic originates. Always create a separate subnet for your appliances.
 
-  **Address Prefix**               |  **Next Hop Type** |   **Next Hop Address**
-  --------------------------------- |  ------------------- | ----------------------
-  0.0.0.0/0                        |  Virtual Appliance  |  10.7.0.38
-  10.10.1.64/27 (Data Tier)        |  Virtual Appliance  |  10.7.0.38
-  10.10.1.0/27 (Web Tier)          |  Virtual Appliance  |  10.7.0.38
-  10.7.255.224/27 (GatewaySubnet)  |  Virtual Appliance  |  10.7.0.38
-  10.7.0.0/27 (MGMT Subnet)        |  Virtual Appliance  |  10.7.0.38
+    **Web tier subnet route table**
 
-**Data tier subnet route table**
+    **Address Prefix**               |  **Next Hop Type** |   **Next Hop Address**
+    --------------------------------- | ------------------- | ----------------------
+    0.0.0.0/0                         | Virtual Appliance  |  10.7.0.38
+    10.10.1.32/27 (Business Tier)    |  Virtual Appliance  |  10.7.0.38
+    10.10.1.64/27 (Data Tier)        |  Virtual Appliance  |  10.7.0.38
+    10.7.255.224/27 (GatewaySubnet)  |  Virtual Appliance  |  10.7.0.38
+    10.7.0.0/27 (MGMT Subnet)        |  Virtual Appliance  |  10.7.0.38
 
-  **Address Prefix**               |  **Next Hop Type**  |  **Next Hop Address**
-  --------------------------------- |  ------------------- | ----------------------
-  0.0.0.0/0                       |   Virtual Appliance |   10.7.0.38
-  10.10.1.32/27 (Business Tier)   |   Virtual Appliance |   10.7.0.38
-  10.10.1.0/27 (Web Tier)         |   Virtual Appliance |   10.7.0.38
-  10.7.255.224/27 (GatewaySubnet) |   Virtual Appliance |   10.7.0.38
-  10.7.0.0/27 (MGMT Subnet)       |   Virtual Appliance |   10.7.0.38
+    **Business tier subnet route table**
 
-### Network Security Group usage
+    **Address Prefix**               |  **Next Hop Type** |   **Next Hop Address**
+    --------------------------------- |  ------------------- | ----------------------
+    0.0.0.0/0                        |  Virtual Appliance  |  10.7.0.38
+    10.10.1.64/27 (Data Tier)        |  Virtual Appliance  |  10.7.0.38
+    10.10.1.0/27 (Web Tier)          |  Virtual Appliance  |  10.7.0.38
+    10.7.255.224/27 (GatewaySubnet)  |  Virtual Appliance  |  10.7.0.38
+    10.7.0.0/27 (MGMT Subnet)        |  Virtual Appliance  |  10.7.0.38
 
-Network Security Groups (NSGs) will be used to help secure the configuration by limiting traffic flow. NSGs function by customer-defined inbound and outbound filter rules. NSGs may be applied to either individual NICs or to subnets. In Woodgrove's case, there will be a single NSG applied to each subnet.
+    **Data tier subnet route table**
 
-**Perimeter NSG**
+    **Address Prefix**               |  **Next Hop Type**  |  **Next Hop Address**
+    --------------------------------- |  ------------------- | ----------------------
+    0.0.0.0/0                       |   Virtual Appliance |   10.7.0.38
+    10.10.1.32/27 (Business Tier)   |   Virtual Appliance |   10.7.0.38
+    10.10.1.0/27 (Web Tier)         |   Virtual Appliance |   10.7.0.38
+    10.7.255.224/27 (GatewaySubnet) |   Virtual Appliance |   10.7.0.38
+    10.7.0.0/27 (MGMT Subnet)       |   Virtual Appliance |   10.7.0.38
 
-Traffic to manage the NSGs will only be allowed from the management subnet and from within the headquarters address range that represents the Woodgrove Financial Services NOC.
+6. Identify where Network Security Groups are used in your design.
 
-  **Name**  |   **Priority** |   **Source**              |     **Protocol** |   **Source Port Range** |  **Destination**  |  **Dest. Port Range** |   **Action**
-  ----------- | -------------- | --------------------------- | -------------- |  ----------------------- | ----------------- |  ---------------------- | ------------
-  MGMT1       | 100            | 10.7.0.0/27                 | TCP            | Any                     | 10.7.0.32/27      | 807                    | Allow
-  MGMT2       | 110            | 10.7.0.0/27                 | TCP            | Any                     | 10.7.0.32/27      | 801                    | Allow
-  TINA\_VPN   | 200            | OnPrem PIP of VPN gateway   | Any            | Any                     | 10.7.0.32/27      | 691                    | Allow
-  HTTP        | 300            | Any                         | TCP            | Any                     | 10.7.0.32/27      | 80                     | Allow
-  SSH         | 400            | 10.7.0.0/27                 | TCP            | Any                     | 10.7.0.32/27      | 22                     | Allow
-  MGMT3       | 500            | 10.7.0.0/27                 | TCP            | Any                     | 10.7.0.32/27      | 807                    | Allow
-  MGMT4       | 510            | 10.7.0.0/27                 | TCP            | Any                     | 10.7.0.32/27      | 801                    | Allow
-  MGMT4       | 520            | 10.7.0.0/27                 | TCP            | Any                     | 10.7.0.32/27      | 22                     | Allow
+    Network Security Groups (NSGs) will be used to help secure the configuration by limiting traffic flow. NSGs function by customer-defined inbound and outbound filter rules. NSGs may be applied to either individual NICs or to subnets. In Woodgrove's case, there will be a single NSG applied to each subnet.
 
-**Management NSG**
+    **Perimeter NSG**
 
-Only RDP traffic from the headquarters-based NOC will be allowed into the management subnet.
+    Traffic to manage the NSGs will only be allowed from the management subnet and from within the headquarters address range that represents the Woodgrove Financial Services NOC.
 
-  **Name**  |  **Priority**  |  **Source**   |  **Protocol**  |  **Source Port Range**  |  **Destination**  |  **Dest. Port Range**  |  **Action**
-  ---------- | --------------|  ------------- | --------------|  ----------------------- | ----------------- | ---------------------- | ------------
-  RDP        | 100           |  10.0.2.0/23 |   Any           |  Any                    |  10.7.0.0/27      |  3389                  | Allow
-  RDP       |  110           |  10.0.0.0/23  |  Any            | Any                    |  10.7.0.0/27      |  3389                  |  Allow
+    **Name**  |   **Priority** |   **Source**              |     **Protocol** |   **Source Port Range** |  **Destination**  |  **Dest. Port Range** |   **Action**
+    ----------- | -------------- | --------------------------- | -------------- |  ----------------------- | ----------------- |  ---------------------- | ------------
+    MGMT1       | 100            | 10.7.0.0/27                 | TCP            | Any                     | 10.7.0.32/27      | 807                    | Allow
+    MGMT2       | 110            | 10.7.0.0/27                 | TCP            | Any                     | 10.7.0.32/27      | 801                    | Allow
+    TINA\_VPN   | 200            | OnPrem PIP of VPN gateway   | Any            | Any                     | 10.7.0.32/27      | 691                    | Allow
+    HTTP        | 300            | Any                         | TCP            | Any                     | 10.7.0.32/27      | 80                     | Allow
+    SSH         | 400            | 10.7.0.0/27                 | TCP            | Any                     | 10.7.0.32/27      | 22                     | Allow
+    MGMT3       | 500            | 10.7.0.0/27                 | TCP            | Any                     | 10.7.0.32/27      | 807                    | Allow
+    MGMT4       | 510            | 10.7.0.0/27                 | TCP            | Any                     | 10.7.0.32/27      | 801                    | Allow
+    MGMT4       | 520            | 10.7.0.0/27                 | TCP            | Any                     | 10.7.0.32/27      | 22                     | Allow
 
-**Web Tier NSG**
+    **Management NSG**
 
-  **Name**  |  **Priority**  |  **Source**  |   **Protocol** |   **Source Port Range** |   **Destination**  |  **Dest. Port Range** |  **Action**
-  ----------|  --------------|  -------------|  --------------|  ----------------------- | ----------------- | ----------------------|  ------------
-  HTTP      |  100           |  Any           | TCP            | Any                     | 10.10.1.0/27      | 80                    |  Allow
-  HTTPS     |  110           |  Any           | TCP           |  Any                     | 10.10.1.0/27      | 443                   |  Allow
-  RDP       |  120           |  10.7.0.0/27  |  Any          |   Any                    |  10.10.1.0/27     |  3389                  |  Allow
+    Only RDP traffic from the headquarters-based NOC will be allowed into the management subnet.
 
-**Business Tier NSG**
+    **Name**  |  **Priority**  |  **Source**   |  **Protocol**  |  **Source Port Range**  |  **Destination**  |  **Dest. Port Range**  |  **Action**
+    ---------- | --------------|  ------------- | --------------|  ----------------------- | ----------------- | ---------------------- | ------------
+    RDP        | 100           |  10.0.2.0/23 |   Any           |  Any                    |  10.7.0.0/27      |  3389                  | Allow
+    RDP       |  110           |  10.0.0.0/23  |  Any            | Any                    |  10.7.0.0/27      |  3389                  |  Allow
 
-  **Name**  |  **Priority** |   **Source**  |    **Protocol** |   **Source Port Range** |   **Destination** |   **Dest. Port Range** |   **Action**
-  ---------- | -------------- | -------------- | -------------- | -----------------------| ----------------- | ---------------------- | ------------
-  RDP        | 100           |  10.7.0.0/27   |  Any           |  Any                     | 10.10.1.32/27    |  3389                  |  Allow
-  HTTPS     |  110           |  10.10.1.0/27  |  TCP           |  Any                    |  10.10.1.32/27   |   443                   |  Allow
+    **Web Tier NSG**
 
-**Data Tier NSG**
+    **Name**  |  **Priority**  |  **Source**  |   **Protocol** |   **Source Port Range** |   **Destination**  |  **Dest. Port Range** |  **Action**
+    ----------|  --------------|  -------------|  --------------|  ----------------------- | ----------------- | ----------------------|  ------------
+    HTTP      |  100           |  Any           | TCP            | Any                     | 10.10.1.0/27      | 80                    |  Allow
+    HTTPS     |  110           |  Any           | TCP           |  Any                     | 10.10.1.0/27      | 443                   |  Allow
+    RDP       |  120           |  10.7.0.0/27  |  Any          |   Any                    |  10.10.1.0/27     |  3389                  |  Allow
 
-  **Name** |   **Priority**  |  **Source**   |    **Protocol**  |  **Source Port Range** |   **Destination** |  **Dest. Port Range**  |  **Action**
-  ---------- | --------------|  --------------- | -------------- | ----------------------- | ----------------- | ---------------------- | ------------
-  SQL        | 100           |  10.10.1.32/27  |  TCP           |  Any                     | 10.10.1.64/27    |  1433                  |  Allow
-  RDP        | 110           |  10.7.0.0/27    |  ANY           |  Any                    |  10.10.1.64/27     | 3389                  |  Allow
+    **Business Tier NSG**
+
+    **Name**  |  **Priority** |   **Source**  |    **Protocol** |   **Source Port Range** |   **Destination** |   **Dest. Port Range** |   **Action**
+    ---------- | -------------- | -------------- | -------------- | -----------------------| ----------------- | ---------------------- | ------------
+    RDP        | 100           |  10.7.0.0/27   |  Any           |  Any                     | 10.10.1.32/27    |  3389                  |  Allow
+    HTTPS     |  110           |  10.10.1.0/27  |  TCP           |  Any                    |  10.10.1.32/27   |   443                   |  Allow
+
+    **Data Tier NSG**
+
+    **Name** |   **Priority**  |  **Source**   |    **Protocol**  |  **Source Port Range** |   **Destination** |  **Dest. Port Range**  |  **Action**
+    ---------- | --------------|  --------------- | -------------- | ----------------------- | ----------------- | ---------------------- | ------------
+    SQL        | 100           |  10.10.1.32/27  |  TCP           |  Any                     | 10.10.1.64/27    |  1433                  |  Allow
+    RDP        | 110           |  10.7.0.0/27    |  ANY           |  Any                    |  10.10.1.64/27     | 3389                  |  Allow
+
+
+    In addition, to accommodate control of traffic flow for legacy business apps that will be collocated on the same subnets, the design includes provisions for creating Application Security Groups. There will be a distinct application security group per application (e.g. App1WebTier, App1BusinessTier, and App1DataTier), with the corresponding Network Security Groups, referencing individual application security groups as their sources or destinations. 
 
 ## Checklist of preferred objection handling
 
 1.  As a financial institution, Woodgrove is under tight regulatory compliance requirements. Security is a key aspect of compliance and as such, it must be a key tenant of all operations including those related to technology. The corporate security officer is generally opposed to using services solely accessible over the public Internet. Services like Office 365, CRM, and other Microsoft SaaS offerings are off limits. Additionally, PaaS services accessed over the Internet are also unusable. It has relegated Woodgrove to private Azure services such as IaaS.
 
     **Potential Answer**
+    
     Using ExpressRoute, Woodgrove can access and use Azure private and public services without traversing the Internet. This secure connectivity, in addition to the business-class SLAs and greater bandwidth, make ExpressRoute a compelling offering that addresses this objection. Regarding SaaS offerings, such as Office 365, Woodgrove can employ Azure Active Directory conditional access to provide controls such as a multi-factor authenticated user, an authenticated device, and a compliant device. All traffic to and from Office 365 is encrypted with SSL/TLS, and the data is encrypted at rest in Microsoft datacenters.
 
 2.  The director of Network Operations is under the impression that complex enterprise-grade networking scenarios, such as those that support n-tier applications, cannot be configured in hyper-scale public clouds. Trust comes slowly with this director. She will most likely need detailed solution plans, case studies, and even customer testimonials to help convince her of the viability of anything other than simple networking scenarios in Azure.
 
     **Potential Answer**
-    Azure supports many technologies that enable complex networking scenarios. For example, Azure offers both internal and external load balancers, network security groups that filter traffic in a similar fashion as firewall rules, user defined routing that allows for designing routing patterns, Virtual Network appliances from well-known vendors like Barracuda, Cisco, and Checkpoint, and Azure offers the ability to set up your Virtual Network with as many subnets as are required for your workload.
+    
+    Azure supports many critical enterprise-grade scenarios, including scenarios that require hybrid connectivity and high availability such as Woodgrove. Many of these scenarios are documented in the Azure Architecture Center with reference architectures that cover best practices. 
 
 3. The director of Network Operations also does not trust cloud security. She will need a strategy in place which allows Network Engineers the ability to analyze traffic flows and capture packets when needed for cloud-hosted resources.
 
     **Potential Answer**
+    
     Azure fully supports forced tunneling ensuring that all Internet traffic is directed to the desired site, be that in an Azure Virtual Network or on-premises. For example, all Internet traffic can easily be routed from Azure to an on-premises appliance for intrusion detection/prevention and logging.
 
 4. The corporate compliance officer of Woodgrove must ensure compliance with many requirements to ensure his organization passes audits from both internal and external entities. One requirement is all outbound Internet requests must pass through an on-premises system that inspects and logs this traffic. The CCO is skeptical of IaaS solutions in Azure since "those VMs in the cloud can access the Internet directly."
 
     **Potential Answer**
-    The Azure Marketplace has thousands of solutions from many different vendors. These solutions are built and validated by the vendor to perform as well as their on-premises variety. In the case of Woodgrove, which takes advantage of solutions from Barracuda, there are several solutions from this vendor in place and ready for use today.
+    
+    This can be addressed by enabling forced tunneling, which directs all outbound traffic to an on-premises location such as a security appliance. This is enabled in ExpressRoute by advertising a default BGP route.
 
-5.  Woodgrove has an arduous process for testing vendor-supplied solutions. In the network space, they have standardized on 3rd party solutions for network and application firewalls with existing vendors. They would like to use their trusted vendors to support cloud-based configurations as much as possible.
-
-    **Potential Answer**
-    Network Watcher in combination with NSG flow logs will allow Network Engineers to perform a full analysis of traffic between NSGs and from compute resources hosted in Azure.
 
 ## Customer quote (to be read back to the attendees at the end)
 
