@@ -10,7 +10,7 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-May 2019
+June 2019
 </div>
 
 Information in this document, including URL and other Internet Website references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -498,14 +498,14 @@ The solution for Woodgrove involved several technologies, including:
 
     Taking advantage of different providers will enable Woodgrove to maintain robust connectivity to Azure even in the case of a catastrophic provider issue.
 
-    Because of the potential of large amounts of data movement back and forth between Azure and the on-premises environment, the unlimited licensing option was chosen for both ExpressRoute circuits. From a bandwidth perspective, after completing a study of current bandwidth usage trends, 1 Gbps circuit sizes were selected for both ExpressRoute circuits.
+    Because of the potential of large amounts of data movement back and forth between Azure and the on-premises environment, the metered data option was chosen for both ExpressRoute circuits (customer has the option of converting from metered to unlimited if needed). From a bandwidth perspective, after completing a study of current bandwidth usage trends, 1 Gbps circuit sizes were selected for both ExpressRoute circuits.
 
 
 2. What ExpressRoute peering options you would enable and what workloads would use them? Diagram your peering configuration including subnet, IP and autonomous system number configuration needed.
 
-    After learning that, with ExpressRoute, PaaS services do not traverse the Internet, there was renewed interest in planning for PaaS adoption. These needs, in conjunction with connecting to private services (such as IaaS), dictate for the ExpressRoute circuits to be set up for private and public peering.
+    After learning that, with ExpressRoute, PaaS services do not traverse the Internet, there was renewed interest in planning for PaaS adoption. These needs, in conjunction with connecting to private services (such as IaaS), dictate for the ExpressRoute circuits to be set up for private and Microsoft peering.
 
-    ![This image represents private and public peering for the ExpressRoute circuits.](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/image7.png)
+    ![This image represents private and Microsoft peering for the ExpressRoute circuits.](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/image7.png)
 
     Figure 2 - Peering for ExpressRoute
 
@@ -555,9 +555,9 @@ The solution for Woodgrove involved several technologies, including:
     Get-AzureRmExpressRouteCircuit -Name <<circuit-name>> -ResourceGroupName <<resource-group>>
     ```
 
-    -   Reserve two /30 subnets for each peering type desired (private or public for private peering and public for public or Microsoft peering). These /30 subnets will be used to provide IP addresses for the routers used for the circuit.
+    -   Reserve two /30 subnets for each peering type desired (private or public for private peering and public for Microsoft peering). These /30 subnets will be used to provide IP addresses for the routers used for the circuit.
 
-    -   Configure routing for the ExpressRoute circuit. You need to run the command below for each type of peering you want to configure (private, public, and Microsoft).
+    -   Configure routing for the ExpressRoute circuit. You need to run the command below for each type of peering you want to configure (private and Microsoft).
 
     ```
     Set-AzureRmExpressRouteCircuitPeeringConfig -Name <<peering-name -Circuit <<circuit-name -PeeringType <<peering-type -PeerASN <<peer-asn -PrimaryPeerAddressPrefix <<primary-peer-address-prefix -SecondaryPeerAddressPrefix <<secondary-peer-address-prefix -VlanId <<vlan-id
@@ -565,7 +565,7 @@ The solution for Woodgrove involved several technologies, including:
     Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit <<circuit-name>>
     ```
 
-    -   Reserve another pool of valid Public IP addresses to use for NAT for public and Microsoft peering. We recommend a different pool for each peering. Specify the pool to your connectivity provider, so they can configure BGP advertisements for those ranges.
+    -   Reserve another pool of valid Public IP addresses to use for NAT for Microsoft peering. Specify the pool to your connectivity provider, so they can configure BGP advertisements for those ranges.
 
     -   Link your private VNet(s) in the cloud to the ExpressRoute circuit. Use the following PowerShell commands:
 
@@ -577,7 +577,7 @@ The solution for Woodgrove involved several technologies, including:
     New-AzureRmVirtualNetworkGatewayConnection -Name <<connection-name -ResourceGroupName <<resource-group -Location <<location>> -VirtualNetworkGateway1 $gw -PeerId $circuit.Id -ConnectionType ExpressRoute
     ```
 
-    Because Woodgrove is using a layer 2 connection in Chicago, they deployed redundant routers in the datacenter in an active-active configuration. They connected the primary circuit to one router and the secondary circuit to the other. It provided a highly available connection at both ends of the connection. It is necessary to realize the ExpressRoute SLA.
+    Because Woodgrove is using a layer 2 connection in Chicago, they deployed redundant routers in the datacenter in an active-active configuration. They connected the primary connection to one router and the secondary connection to the other. It provided a highly available connectivity at both ends of the connection. It is necessary to realize the ExpressRoute SLA.
 
     **ExpressRoute connectivity type for Plano**
 
@@ -610,13 +610,7 @@ The solution for Woodgrove involved several technologies, including:
 
 3. What are the NAT requirements for ExpressRoute integration?
 
-    The Azure public peering path enables you to connect to all services hosted in Azure over their Public IP addresses. These services include all services listed in the ExpressRoute FAQ and any services hosted by ISVs on Microsoft Azure. Connectivity to Microsoft Azure services on public peering is always initiated from your network into the Microsoft network. Traffic destined to Microsoft Azure on public peering must be SNATed to valid Public IPv4 addresses before they enter the Microsoft network.
-
-    ![The ExpressRoute diagram is made up of three boxes from left to right: Customer Network, Connectivity Provider, and Microsoft Cloud. Within the Customer Network box are user icons in the cloud, and NAT. The Connectivity provider box has a Partner Edge box. Express Route connects The Connectivity Provder box wtih the Microsoft Cloud box, which includes Microsoft Edge and Azure Public Services.](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/image12.png "ExpressRoute ")
-
-    Figure : Deprecated public peering SNAT
-
-    The Microsoft peering path lets you connect to Microsoft cloud services that are not supported through the Azure public peering path. The list of services includes Office 365 services such as Exchange Online, SharePoint Online, Skype for Business, and CRM Online. Microsoft supports bidirectional connectivity via Microsoft peering. Traffic destined to Microsoft cloud services must be SNATed to valid Public IPv4 addresses before they enter the Microsoft network.
+    The Microsoft peering path enables you to connect to all services hosted in Azure over their Public IP addresses. These services include all services listed in the ExpressRoute FAQ and any services hosted by ISVs on Microsoft Azure. The Microsoft peering also lets you connect to Office 365 services such as Exchange Online, SharePoint Online, Skype for Business, and to CRM Online. Microsoft supports bidirectional connectivity via Microsoft peering. Traffic destined to Microsoft cloud services must be SNATed to valid Public IPv4 or IPv6 addresses before they enter the Microsoft network.
 
     ![The ExpressRoute diagram is made up of three boxes from left to right: Customer Network, Layer 2 Connectivity Provider, and Microsoft Cloud. Within the Customer Network box are user icons in the cloud, and two NAT boxes. The Layer 2 Connectivity provider box has the same Partner Edge box. Express Route connects The Layer 2 Connectivity Provder box wtih the Microsoft Cloud box, which includes Microsoft Edge and Micrsosoft Public Services.](images/Whiteboarddesignsessiontrainerguide-Enterprise-classnetworkinginAzureimages/media/image13.png "ExpressRoute")
 
