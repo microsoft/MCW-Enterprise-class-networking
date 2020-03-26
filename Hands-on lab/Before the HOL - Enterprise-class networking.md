@@ -39,10 +39,6 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 # Enterprise-class networking in Azure before the hands-on lab setup guide
 
-## Requirements
-
-You must have a working Azure subscription to carry out this hands-on lab step-by-step without a spending cap to deploy the Barracuda firewall from the Azure Marketplace.
-
 ## Before the hands-on lab
 
 Duration: 15 minutes
