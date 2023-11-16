@@ -1,6 +1,7 @@
 # Enterprise-class networking in Azure
 
-## NOTE: This workshop will retire November 16, 2023. This workshop is no longer being maintained.
+## NOTE: This workshop is archived and no longer being maintained. Content is read-only.
+
 
 Woodgrove Financial Services has been in business for over 75 years and is a well-known and respected name brand in the financial industry. They are historically risk-adverse, and it has served them well, enabling them to weather several financial storms that closed the doors on similarly sized institutions. While Woodgrove started in the United States, around 20 years ago, they branched out into the international arena by acquiring a bank headquartered in Mexico City. Today, they have 224 branches in the United States and 64 in Mexico.
 
